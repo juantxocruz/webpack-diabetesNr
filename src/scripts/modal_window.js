@@ -1,3 +1,4 @@
+import { getDictionaryWord } from './dictionary';
 
 let modalDiv = self.document.getElementById("modal_window");
 let today = new Date();
@@ -28,8 +29,8 @@ export function openModalWindow(event, message) {
     //event.stopPropagation();
     if (event.currentTarget.name === 'cbox') {
         if (event.currentTarget.checked) {
-            let pathology = event.currentTarget.nextSibling.data;
-            message['action'] = pathology + "."
+            let pathology = event.currentTarget.getAttribute('data-dictionary');
+            message['action'] = getDictionaryWord(pathology) + "."
             drawModalWindowInnerHTML(message);
 
         }

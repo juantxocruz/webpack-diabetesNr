@@ -22,7 +22,7 @@ import { calcTobacco } from './tobacco_calc';
 import { openModalResults, initModalResults } from './modal_results';
 import { openModalWindow, initModalWindow } from './modal_window';
 
-
+import { getDictionaryWord, initDictionary } from './dictionary';
 
 
 
@@ -35,6 +35,8 @@ if (process.env.NODE_ENV !== 'production') {
     console.log('Looks like we are in development mode!');
 }
 
+
+export let idiom = 'EN';
 
 
 let formForm = document.forms["diabetes_form"];
@@ -49,10 +51,10 @@ let body_mass = formForm.elements['body_mass'];
 
 
 let pathologiesModalSetup = {
-    header: "Patología excluyente",
-    content: "Esta patología no permite asegurar ningún riesgo.",
+    header: getDictionaryWord("exclusionary_pathology"),
+    content: getDictionaryWord("pathologiesModalSetup_content"),
     action: "",
-    footer: "© NacionalRe. Todos los derechos reservados."
+    footer: getDictionaryWord("pathologiesModalSetup_footer"),
 }
 
 let birthdayModalSetup = {
@@ -240,6 +242,8 @@ function checkNodeFields(nodeList) {
         }
 
         if ((nodeList[i].type === "date" || nodeList[i].type === "number") && nodeList[i].value === "") {
+            let x = nodeList[i].name + "_msg";
+            let y = document.getElementById(nodeList[i].name + "_msg");
             document.getElementById(nodeList[i].name + "_msg").style.display = "block";
         }
     }
@@ -620,6 +624,7 @@ let init = () => {
     initSubmit();
     initReset();
     disableEnter();
+    initDictionary();
 };
 
 init();

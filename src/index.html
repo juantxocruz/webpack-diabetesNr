@@ -19,58 +19,62 @@
       <form action="" method="" target="_blank" class="diabetes-form" id="diabetes_form" name="diabetes_form">
         <div class="row">
           <div class="col-6">
-            <p class="form-title">¿Ha padecido alguna de las siguiente patologías?</p>
-            <p class="mandatory"><span id='cbox_msg'><small>Estas patologías no permite asegurar ningún
+            <p class="form-title" id="suffered_pathologies" data-dictionary="suffered_pathologies">¿Ha padecido alguna
+              de las siguiente patologías?</p>
+            <p class="mandatory"><span id='cbox_msg' data-dictionary="suffered_pathologies"><small>Estas patologías no
+                  permite asegurar ningún
                   riesgo.</small></span>&nbsp;&#8205;</p>
             <ul class="vertical">
-              <li> <input type="checkbox" id="cbox1" name="cbox" value="" autocomplete="off">Retinopatía
+              <li> <input type="checkbox" id="cbox1" name="cbox" value="" autocomplete="off"
+                  data-dictionary="retinopathy"><span id="retinopathy">Retinopatía</span>
               </li>
-              <li><input type="checkbox" id="cbox2" name="cbox" value="" autocomplete="off">Neuropatía
+              <li><input type="checkbox" id="cbox2" name="cbox" value="" autocomplete="off"
+                  data-dictionary="neuropathy"><span id="neuropathy">Neuropatía</span>
               </li>
-              <li><input type="checkbox" id="cbox3" name="cbox" value="" autocomplete="off">Enfermedad
-                coronaria (Angina, I.A.M.)</li>
-              <li><input type="checkbox" id="cbox4" name="cbox" value="" autocomplete="off">Enfermedad
-                renal asociada
+              <li><input type="checkbox" id="cbox3" name="cbox" value="" autocomplete="off"
+                  data-dictionary="coronary_heart_disease"><span id="coronary_heart_disease">Enfermedad
+                  coronaria (Angina, I.A.M.)</span></li>
+              <li><input type="checkbox" id="cbox4" name="cbox" value="" autocomplete="off"
+                  data-dictionary="kidney_disease"><span id="kidney_disease">Enfermedad renal asociada</span>
               </li>
-              <!-- <li><input type="checkbox" id="cbox5" name="cbox" value="" autocomplete="off">Enfermedad
+              <!-- <li><input type="checkbox" id="cbox5" name="cbox" value="" autocomplete="off" data-dictionary = "">Enfermedad
                                 arterial asociada</li> -->
-              <li><input type="checkbox" id="cbox6" name="cbox" value="" autocomplete="off">Enfermedad
-                arterial
-                periférica</li>
-              <li><input type="checkbox" id="cbox7" name="cbox" value="" autocomplete="off">Accidente
-                cerebrovascular
+              <li><input type="checkbox" id="cbox6" name="cbox" value="" autocomplete="off"
+                  data-dictionary="arterial_disease"><span id="arterial_disease">Enfermedad arterial
+                  periférica</span></li>
+              <li><input type="checkbox" id="cbox7" name="cbox" value="" autocomplete="off"
+                  data-dictionary="stroke"><span id="stroke">Accidente cerebrovascular</span>
               </li>
-              <li><input type="checkbox" id="cbox8" name="cbox" value="" autocomplete="off">Ingreso
-                hace menos de 6
-                meses por una
-                complicación</li>
+              <li><input type="checkbox" id="cbox8" name="cbox" value="" autocomplete="off"
+                  data-dictionary="admission_less"><span id="admission_less">Ingreso hace menos de 6
+                  meses por una complicación</span></li>
             </ul>
 
           </div>
           <div class="col-6">
             <div class="row">
               <div class="col-6">
-                <p class="form-title">Género</p>
-                <p class="mandatory"><span id='gender_msg'><small>Campo
+                <p class="form-title" id="gender_upper">Género</p>
+                <p class="mandatory"><span id='gender_msg'><small id="mandatory_text_1">Campo
                       obligatorio.</small></span>&nbsp;</p>
 
                 <ul class="vertical">
-                  <li><input type="radio" id="male" name="gender" value="male" autocomplete="off">
-                    <label for="male">Hombre</label>
+                  <li><input type="radio" name="gender" value="male" autocomplete="off">
+                    <label for="male" id="male">Hombre</label>
                   </li>
-                  <li><input type="radio" id="female" name="gender" value="female" autocomplete="off">
-                    <label for="female">Mujer</label>
+                  <li><input type="radio" name="gender" value="female" autocomplete="off">
+                    <label for="female" id="female">Mujer</label>
                   </li>
                 </ul>
               </div>
               <div class="col-6">
-                <p class="form-title">Fecha nacimiento</p>
+                <p class="form-title" id="birth_date">Fecha nacimiento</p>
                 <p class="numeric"><small><label for="years_diabetes">&nbsp;</label></small>
                 </p>
 
                 <input class="margin__top-s row numeric" type="date" id="birthday" name="birthday" value=""
                   autocomplete="off">
-                <p class="mandatory"><span id='birthday_msg'><small>Fecha
+                <p class="mandatory"><span id='birthday_msg'><small id="mandatory_text_2">Fecha
                       obligatoria.</small></span>&nbsp;</p>
 
 
@@ -81,30 +85,30 @@
 
             <div class="row">
               <div class="col-6">
-                <p class="form-title">Diabetes</p>
-                <p class="mandatory"><span id='diabetes_msg'><small>Campo
+                <p class="form-title" id="Diabetes">Diabetes</p>
+                <p class="mandatory"><span id='diabetes_msg'><small id="mandatory_text_3">Campo
                       obligatorio.</small></span>&nbsp;</p>
                 <ul class="vertical">
                   <li><input type="radio" id="t1" name="diabetes" value="t1" autocomplete="off">
-                    <label for="t1">Tipo
+                    <label for="t1" id="type_I">Tipo
                       I</label>
                   </li>
                   <li><input type="radio" id="t2" name="diabetes" value="t2" autocomplete="off">
-                    <label for="t2">Tipo
+                    <label for="t2" id="type_II">Tipo
                       II</label>
                   </li>
                 </ul>
               </div>
               <div class="col-6">
-                <p class="form-title">Antigüedad diabetes</p>
+                <p class="form-title" id="old_diabetes">Antigüedad diabetes</p>
 
-                <p class="numeric"><small><label for="years_diabetes">Años desde
+                <p class="numeric"><small><label for="years_diabetes" id="years_diagnosis">Años desde
                       diagnóstico:</label></small>
                 </p>
 
                 <p class="margin__top-xs"><input type="number" id="years_diabetes" name="years_diabetes" min="0"
                     max="100" autocomplete="off"></p>
-                <p class="mandatory"><span id='years_diabetes_msg'><small>Campo
+                <p class="mandatory"><span id='years_diabetes_msg'><small id="mandatory_text_4">Campo
                       obligatorio.</small></span>&nbsp;</p>
 
 
@@ -117,12 +121,12 @@
 
         <div class="row">
           <div class="col-3">
-            <p class="form-title">Constitución</p>
+            <p class="form-title" id="constitution">Constitución</p>
             <small>&nbsp;</small>
             <table class="regular margin__top-xs">
               <tr>
-                <td>Peso (kg)
-                  <p class="mandatory"><span id='weight_msg'><small>Campo
+                <td><span id="weight_kg">Peso (kg)</span>
+                  <p class="mandatory"><span id='weight_msg'><small id="mandatory_text_5">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -131,9 +135,9 @@
 
               </tr>
               <tr>
-                <td>Altura (cm)
+                <td><span id="height_cm">Altura (cm)</span>
 
-                  <p class="mandatory"><span id='height_msg'><small>Campo
+                  <p class="mandatory"><span id='height_msg'><small id="mandatory_text_6">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -142,9 +146,9 @@
 
               </tr>
               <tr>
-                <td>Índice Masa
+                <td><span id="mass_index">Índice Masa</span>
 
-                  <p class="mandatory"><span id='body_mass_msg'><small>Campo
+                  <p class="mandatory"><span id='body_mass_msg'><small id="mandatory_text_7">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -156,12 +160,12 @@
 
           </div>
           <div class="col-3">
-            <p class="form-title">Tabaco</p>
-            <small>Consumo diario</small>
+            <p class="form-title" id="tobacco">Tabaco</p>
+            <small id="tobacco_daily_consumption">Consumo diario</small>
             <table class="regular margin__top-xs">
               <tr>
-                <td>Cigarrillos
-                  <p class="mandatory"><span id='cigarettes_msg'><small>Campo
+                <td><span id="upper_cigarettes">Cigarrillos</span>
+                  <p class="mandatory"><span id='cigarettes_msg'><small id="mandatory_text_8">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -170,10 +174,10 @@
 
               </tr>
               <tr>
-                <td>Puros
+                <td><span id="upper_cigars">Puros/span>
 
-                  <p class="mandatory"><span id='cigars_msg'><small>Campo
-                        obligatorio.</small></span>&nbsp;</p>
+                    <p class="mandatory"><span id='cigars_msg'><small id="mandatory_text_9">Campo
+                          obligatorio.</small></span>&nbsp;</p>
 
                 </td>
                 <td><input type="number" id="cigars" name="cigars" min="0" max="100" autocomplete="off" value=0>
@@ -181,8 +185,8 @@
 
               </tr>
               <tr>
-                <td>Pipa
-                  <p class="mandatory"><span id='pipes_msg'><small>Campo
+                <td><span id="upper_pipes">Pipa</span>
+                  <p class="mandatory"><span id='pipes_msg'><small id="mandatory_text_10">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -194,13 +198,13 @@
 
           </div>
           <div class="col-3">
-            <p class="form-title">Alcohol</p>
-            <small>Consumo diario</small>
+            <p class="form-title" id="upper_alcohol">Alcohol</p>
+            <small id="alcohol_daily_consumption">Consumo diario</small>
             <table class="regular margin__top-xs">
               <tr>
-                <td>Vinos
+                <td><span id="upper_wines">Vinos</span>
 
-                  <p class="mandatory"><span id='wines_msg'><small>Campo
+                  <p class="mandatory"><span id='wines_msg'><small id="mandatory_text_11">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -209,9 +213,9 @@
 
               </tr>
               <tr>
-                <td>Cervezas
+                <td><span id="upper_beers">Cervezas</span>
 
-                  <p class="mandatory"><span id='beers_msg'><small>Campo
+                  <p class="mandatory"><span id='beers_msg'><small id="mandatory_text_12">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -220,8 +224,8 @@
 
               </tr>
               <tr>
-                <td>Licores
-                  <p class="mandatory"><span id='spirits_msg'><small>Campo
+                <td><span id="upper_spirits">Licores</span>
+                  <p class=" mandatory"><span id='spirits_msg'><small id="mandatory_text_13">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
                 </td>
@@ -239,7 +243,7 @@
               <tr>
                 <td>Sistólica
 
-                  <p class="mandatory"><span id='systolic_msg'><small>Campo
+                  <p class="mandatory"><span id='systolic_msg'><small id="mandatory_text_14">Campo
                         obligatorio.</small></span>&nbsp;</p>
 
 
@@ -250,7 +254,7 @@
               </tr>
               <tr>
                 <td>Diastólica
-                  <p class="mandatory"><span id='diastolic_msg'><small>Campo
+                  <p class="mandatory"><span id='diastolic_msg'><small id="mandatory_text_15">Campo
                         obligatorio.</small></span>&nbsp;</p>
                 </td>
                 <td><input type="number" id="diastolic" name="diastolic" min="0" max="200" autocomplete="off">
@@ -270,7 +274,7 @@
           <div class="col-4">
             <p class="form-title">Insulina</p>
             <small>Cantidades</small>
-            <p class="mandatory"><span id='insulin_msg'><small>Campo
+            <p class="mandatory"><span id='insulin_msg'><small id="mandatory_text_16">Campo
                   obligatorio.</small></span>&nbsp;</p>
 
             <ul class="vertical">
@@ -286,7 +290,7 @@
           <div class="col-4">
             <p class="form-title">Hemoglobina glicosilada (HbA1c)</p>
             <small>Milimol por litro (mmol/l)</small>
-            <p class="mandatory"><span id='hemoglobin_msg'><small>Campo
+            <p class="mandatory"><span id='hemoglobin_msg'><small id="mandatory_text_17">Campo
                   obligatorio.</small></span>&nbsp;</p>
 
 
@@ -310,7 +314,7 @@
           <div class="col-4">
             <p class="form-title">Colesterol total</p>
             <small>Miligramos por decilitro (mg/dL)</small>
-            <p class="mandatory"><span id='cholesterol_msg'><small>Campo
+            <p class="mandatory"><span id='cholesterol_msg'><small id="mandatory_text_18">Campo
                   obligatorio.</small></span>&nbsp;</p>
 
 

@@ -1,50 +1,10 @@
+import { getDictionaryWord } from './dictionary';
+
 
 let self = document;
 
 let modal_result = self.getElementById("modal_result");
 let close_modal_result = self.getElementById("close_modal_result");
-
-
-
-let dictionary = [{ "key": "date", "value": "fecha" },
-{ "key": "age", "value": "edad" },
-{ "key": "gender", "value": "género" },
-{ "key": "male", "value": "Hombre" },
-{ "key": "female", "value": "Mujer" },
-{ "key": "diabetes", "value": "diabetes" },
-{ "key": "t1", "value": "tipo 1" },
-{ "key": "t2", "value": "tipo 2" },
-{ "key": "yearsDiabetes", "value": "años de tratamiento de diabetes" },
-{ "key": "weigth", "value": "peso" },
-{ "key": "height", "value": "pltura" },
-{ "key": "imc", "value": "índice de masa muscular" },
-{ "key": "cigarettes", "value": "cigarrillo" },
-{ "key": "cigars", "value": "puro" },
-{ "key": "pipes", "value": "pipa" },
-{ "key": "wines", "value": "vino" },
-{ "key": "beers", "value": "cerveza" },
-{ "key": "spirits", "value": "licor" },
-{ "key": "systolic", "value": "sistólica" },
-{ "key": "diastolic", "value": "diastólica" },
-{ "key": "insulin", "value": "insulina" },
-{ "key": "ins1", "value": "Hasta 25 unidades diarias de insulina" },
-{ "key": "ins2", "value": "Más de 25 unidades diarias de insulina" },
-{ "key": "hemoglobin", "value": "hemoglobina" },
-{ "key": "hem1", "value": "Menos de 7,0" },
-{ "key": "hem2", "value": "De 7,0 a 7,5" },
-{ "key": "hem3", "value": "De 7,6 a 8,0" },
-{ "key": "hem4", "value": "De 8,1 a 9,0" },
-{ "key": "hem5", "value": "De 9,1 a 10" },
-{ "key": "hem6", "value": "Más de 10" },
-{ "key": "cholesterol", "value": "colesterol" },
-{ "key": "cho1", "value": "Hasta 200" },
-{ "key": "cho2", "value": "De 200 a 250" },
-{ "key": "cho3", "value": "De 251 a 275" },
-{ "key": "cho4", "value": "De 276 a 300" },
-{ "key": "cho5", "value": "Más de 300" }];
-
-
-
 let result_today = self.getElementById('result_today');
 let result_year = self.getElementById('result_year');
 let result_vars_constitution = self.getElementById('result_vars_constitution');
@@ -66,12 +26,6 @@ export function initModalResults() {
     close_modal_result.onclick = function () {
         modal_result.style.display = "none";
     }
-}
-
-
-
-function getDictionaryWord(key) {
-    return dictionary.filter(d => d.key === key);
 }
 
 function getYearsDiabetes(num) {
@@ -226,19 +180,19 @@ export function openModalResults(event, _vars, $results) {
     let newDate = new Date(_vars.today);
     let year = newDate.getFullYear();
     let today = newDate.getDate() + '/' + (newDate.getMonth() + 1) + '/' + newDate.getFullYear() + ' a las ' + (newDate.getUTCHours() + 1) + ':' + newDate.getUTCMinutes() + 'h.';
-    let gender = getDictionaryWord(_vars.gender)[0].value;
+    let gender = getDictionaryWord(_vars.gender);
     let bornDate = new Date(_vars.date);
     let date = bornDate.getDate() + '/' + (bornDate.getMonth() + 1) + '/' + bornDate.getFullYear() + '';
     let age = _vars.age + ' años';
     let height = _vars.height + ' cm';
     let weight = _vars.weight + ' kg';
     let imc = _vars.imc + ' imc';
-    let diabetes = 'Diabetes ' + getDictionaryWord(_vars.diabetes)[0].value;
+    let diabetes = 'Diabetes ' + getDictionaryWord(_vars.diabetes);
     let systolic = _vars.systolic + ' sistólica';
     let diastolic = _vars.diastolic + ' diastólica';
-    let insulin = getDictionaryWord(_vars.insulin)[0].value;
-    let hemoglobin = getDictionaryWord(_vars.hemoglobin)[0].value + ' hemoglobina';
-    let cholesterol = getDictionaryWord(_vars.cholesterol)[0].value + ' colesterol';
+    let insulin = getDictionaryWord(_vars.insulin);
+    let hemoglobin = getDictionaryWord(_vars.hemoglobin) + ' hemoglobina';
+    let cholesterol = getDictionaryWord(_vars.cholesterol) + ' colesterol';
     let alcohol = getAlcohol(parseInt(_vars.beers), parseInt(_vars.wines), parseInt(_vars.spirits));
     let tobacco = getTobacco(parseInt(_vars.cigarettes), parseInt(_vars.cigars), parseInt(_vars.pipes));
 
