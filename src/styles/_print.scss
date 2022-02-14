@@ -3,7 +3,7 @@
   margin: 0;
 }
 @media print {
-  .vidaNr-form,
+  .diabetes-form,
   .modal-window {
     display: none;
   }
@@ -52,16 +52,16 @@
   .col-3 {
     width: 20%;
   }
-  .vidaNr-calc [class*="col-"] {
+  .diabetes-calc [class*="col-"] {
     float: left;
     margin-right: 1%;
   }
-  .vidaNr-calc td,
-  .vidaNr-calc th {
+  .diabetes-calc td,
+  .diabetes-calc th {
     font-size: 9px;
   }
 
-  .vidaNr-calc p.big-number {
+  .diabetes-calc p.big-number {
     font-size: 18px;
   }
   .modal-window .result-icon {

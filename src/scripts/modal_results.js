@@ -24,10 +24,8 @@ let dictionary = [{ "key": "date", "value": "fecha" },
 { "key": "wines", "value": "vino" },
 { "key": "beers", "value": "cerveza" },
 { "key": "spirits", "value": "licor" },
-{ "key": "systolic_1", "value": "sistólica" },
-{ "key": "diastolic_1", "value": "diastólica" },
-{ "key": "systolic_2", "value": "sistólica" },
-{ "key": "diastolic_2", "value": "diastólica" },
+{ "key": "systolic", "value": "sistólica" },
+{ "key": "diastolic", "value": "diastólica" },
 { "key": "insulin", "value": "insulina" },
 { "key": "ins1", "value": "Hasta 25 unidades diarias de insulina" },
 { "key": "ins2", "value": "Más de 25 unidades diarias de insulina" },
@@ -39,13 +37,11 @@ let dictionary = [{ "key": "date", "value": "fecha" },
 { "key": "hem5", "value": "De 9,1 a 10" },
 { "key": "hem6", "value": "Más de 10" },
 { "key": "cholesterol", "value": "colesterol" },
-{ "key": "cho0", "value": "Hasta 240" },
-{ "key": "cho1", "value": "De 241 a  270" },
-{ "key": "cho2", "value": "De 271 a  300" },
-{ "key": "cho3", "value": "De 301 a 375" },
-{ "key": "cho4", "value": "De 376 a 450" },
-{ "key": "cho5", "value": "Más de 450" }
-];
+{ "key": "cho1", "value": "Hasta 200" },
+{ "key": "cho2", "value": "De 200 a 250" },
+{ "key": "cho3", "value": "De 251 a 275" },
+{ "key": "cho4", "value": "De 276 a 300" },
+{ "key": "cho5", "value": "Más de 300" }];
 
 
 
@@ -54,16 +50,13 @@ let result_year = self.getElementById('result_year');
 let result_vars_constitution = self.getElementById('result_vars_constitution');
 let result_vars_medical = self.getElementById('result_vars_medical');
 let result_vars_drugs = self.getElementById('result_vars_drugs');
-let result_insurance_life = self.getElementById('result_insurance_life');
-let result_insurance_disability = self.getElementById('result_insurance_disability');
-let result_insurance_accident = self.getElementById('result_insurance_accident');
-let result_insurance_illness = self.getElementById('result_insurance_illness');
-let result_insurance_ilt = self.getElementById('result_insurance_ilt');
+let result_total_life = self.getElementById('result_total_life');
+let result_total_disability = self.getElementById('result_total_disability');
+let result_total_accident = self.getElementById('result_total_accident');
+let result_total_ilt = self.getElementById('result_total_ilt');
 let result_table_life = self.getElementById('result_table_life');
 let result_table_disability = self.getElementById('result_table_disability');
 let result_table_accident = self.getElementById('result_table_accident');
-let result_table_illness = self.getElementById('result_table_illness');
-
 let result_table_ilt = self.getElementById('result_table_ilt');
 
 
@@ -81,6 +74,15 @@ function getDictionaryWord(key) {
     return dictionary.filter(d => d.key === key);
 }
 
+function getYearsDiabetes(num) {
+    if (+num > 1) {
+        return num + ' años';
+    }
+    if (+num === 1) {
+        return num + ' año';
+    }
+    return 'Sin años de antigüedad';
+}
 
 
 function getAlcohol(beers, wines, spirits) {
@@ -142,53 +144,38 @@ function getTobacco(cigarettes, cigars, pipes) {
     return result;
 };
 
-// results from raw excel tables, with no factor calculations
 function getPartialResult(number) {
-    if (number > 300) {
+    if (number >= 999) {
         return '<span class="red">Rechazar</span>';
     }
     if (number === 0) {
         return '<span class="green">Normal</span>';
     }
     if (number > 0) {
-
         return '<span class="red"> +' + number + '%</span>';
     }
 
 }
 
 
-function getInsurance(data, key) {
-    return getPartialResult(+data[key]);
+function getTotalResult(data, key) {
+    let result = data.diabetesByYears[key] + data.diabetesByAge[key] + data.imc[key] + data.tobacco + data.alcohol + data.hypertension + data.insulin + data.hemoglobin + data.cholesterol
+    return getPartialResult(+result);
 }
 
-function getSurcharge(data, insurance, key) {
-
-    if (insurance[key] > 999) {
-        return '<span class="red">Rechazar</span>';
-    } else {
-        let sum = data.alcohol[key] + data.cholesterol + data.imc[key] + data.tension + data.tobacco[key];
-
-        if (sum > insurance[key]) {
-            return '<span class="green">' + (insurance[key] - sum) + '%</span>';
-        }
-        if (sum < insurance[key]) {
-            return '<span class="red"> +' + (insurance[key] - sum) + '%</span>';
-        }
-        if (sum === insurance[key]) {
-            return '<span class="green">No</span>';
-        }
-
-    }
-
-}
-
-function getTableResult(data, $insurance, key) {
+function getTableResult(data, key) {
     let table = '';
     table += '<table class="result-table" style="width:100%">';
     table += '<tr><th </th><th></th></tr>';
+    table += '<tr>';
+    table += '<td>Antigüedad diabetes</td>';
+    table += ' <td>' + getPartialResult(data.diabetesByYears[key]) + '</td>';
+    table += ' </tr>';
 
-
+    table += '<tr>';
+    table += '<td>Edad candidato</td>';
+    table += ' <td>' + getPartialResult(data.diabetesByAge[key]) + '</td>';
+    table += ' </tr>';
 
     table += '<tr>';
     table += '<td>IMC</td>';
@@ -197,30 +184,33 @@ function getTableResult(data, $insurance, key) {
 
     table += '<tr>';
     table += '<td>Tabaco</td>';
-    table += ' <td>' + getPartialResult(data.tobacco[key]) + '</td>';
+    table += ' <td>' + getPartialResult(data.tobacco) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
     table += '<td>Alcohol</td>';
-    table += ' <td>' + getPartialResult(data.alcohol[key]) + '</td>';
+    table += ' <td>' + getPartialResult(data.alcohol) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
     table += '<td>Tensión</td>';
-    table += ' <td>' + getPartialResult(data.tension) + '</td>';
+    table += ' <td>' + getPartialResult(data.hypertension) + '</td>';
     table += ' </tr>';
 
+    table += '<tr>';
+    table += '<td>Hemoglobina</td>';
+    table += ' <td>' + getPartialResult(data.hemoglobin) + '</td>';
+    table += ' </tr>';
+
+    table += '<tr>';
+    table += '<td>Insulina</td>';
+    table += ' <td>' + getPartialResult(data.insulin) + '</td>';
+    table += ' </tr>';
 
     table += '<tr>';
     table += '<td>Colesterol</td>';
     table += ' <td>' + getPartialResult(data.cholesterol) + '</td>';
     table += ' </tr>';
-
-    table += '<tr>';
-    table += '<td>Recargo</td>';
-    table += ' <td>' + getSurcharge(data, $insurance, key) + '</td>';
-    table += ' </tr>';
-
     table += '</table>';
 
     return table;
@@ -229,7 +219,7 @@ function getTableResult(data, $insurance, key) {
 
 
 
-export function openModalResults(event, _vars, $results, $insurance, $inMax) {
+export function openModalResults(event, _vars, $results) {
     event.stopPropagation();
 
     // vars
@@ -239,31 +229,31 @@ export function openModalResults(event, _vars, $results, $insurance, $inMax) {
     let gender = getDictionaryWord(_vars.gender)[0].value;
     let bornDate = new Date(_vars.date);
     let date = bornDate.getDate() + '/' + (bornDate.getMonth() + 1) + '/' + bornDate.getFullYear() + '';
-    let age = _vars.age.regular + ' años';
-    let actuarial = _vars.age.actuarial + ' años';
+    let age = _vars.age + ' años';
     let height = _vars.height + ' cm';
     let weight = _vars.weight + ' kg';
     let imc = _vars.imc + ' imc';
-    let systolic = _vars._hypertension_mean.systolic + ' sistólica';
-    let diastolic = _vars._hypertension_mean.diastolic + ' diastólica';
+    let diabetes = 'Diabetes ' + getDictionaryWord(_vars.diabetes)[0].value;
+    let systolic = _vars.systolic + ' sistólica';
+    let diastolic = _vars.diastolic + ' diastólica';
+    let insulin = getDictionaryWord(_vars.insulin)[0].value;
+    let hemoglobin = getDictionaryWord(_vars.hemoglobin)[0].value + ' hemoglobina';
     let cholesterol = getDictionaryWord(_vars.cholesterol)[0].value + ' colesterol';
     let alcohol = getAlcohol(parseInt(_vars.beers), parseInt(_vars.wines), parseInt(_vars.spirits));
     let tobacco = getTobacco(parseInt(_vars.cigarettes), parseInt(_vars.cigars), parseInt(_vars.pipes));
 
 
-    let constitution = gender + ' | ' + date + ' | ' + age + ' (real) | ' + actuarial + ' (actuarial) | ' + height + ' | ' + weight + ' | ' + imc;
-    let medical = systolic + ' | ' + diastolic;
-    let drugs = cholesterol + ' | ' + alcohol + ' | ' + tobacco;
-    let insurance_life = getInsurance($insurance, 'life');
-    let insurance_disability = getInsurance($insurance, 'disability');
-    let insurance_accident = getInsurance($insurance, 'accident');
-    let insurance_illness = getInsurance($insurance, 'serious_illness');
-    let insurance_ilt = getInsurance($insurance, 'ilt');
-    let table_life = getTableResult($results, $insurance, 'life');
-    let table_disability = getTableResult($results, $insurance, 'disability');
-    let table_accident = getTableResult($results, $insurance, 'accident');
-    let table_illness = getTableResult($results, $insurance, 'serious_illness');
-    let table_ilt = getTableResult($results, $insurance, 'ilt');
+    let constitution = gender + ' | ' + date + ' | ' + age + ' | ' + height + ' | ' + weight + ' | ' + imc;
+    let medical = diabetes + ': ' + getYearsDiabetes(_vars.yearsDiabetes) + ' | ' + systolic + ' | ' + diastolic + ' | ' + insulin;
+    let drugs = hemoglobin + ' | ' + cholesterol + ' | ' + alcohol + ' | ' + tobacco;
+    let total_life = getTotalResult($results, 'life');
+    let total_disability = getTotalResult($results, 'disability');
+    let total_accident = getTotalResult($results, 'accident');
+    let total_ilt = getTotalResult($results, 'ilt');
+    let table_life = getTableResult($results, 'life');
+    let table_disability = getTableResult($results, 'disability');
+    let table_accident = getTableResult($results, 'accident');
+    let table_ilt = getTableResult($results, 'ilt');
 
 
     // print
@@ -272,17 +262,14 @@ export function openModalResults(event, _vars, $results, $insurance, $inMax) {
     result_vars_constitution.innerHTML = constitution;
     result_vars_medical.innerHTML = medical;
     result_vars_drugs.innerHTML = drugs;
-    result_insurance_life.innerHTML = insurance_life;
-    result_insurance_disability.innerHTML = insurance_disability;
-    result_insurance_accident.innerHTML = insurance_accident;
-    result_insurance_illness.innerHTML = insurance_illness;
-    result_insurance_ilt.innerHTML = insurance_ilt;
+    result_total_life.innerHTML = total_life;
+    result_total_disability.innerHTML = total_disability;
+    result_total_accident.innerHTML = total_accident;
+    result_total_ilt.innerHTML = total_ilt;
     result_table_life.innerHTML = table_life;
     result_table_disability.innerHTML = table_disability;
     result_table_accident.innerHTML = table_accident;
-    result_table_illness.innerHTML = table_illness;
     result_table_ilt.innerHTML = table_ilt;
 
     modal_result.style.display = "block";
 }
-
