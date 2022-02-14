@@ -1,0 +1,25 @@
+@import "./reset";
+@import "./variables";
+
+@import "./avia.sass";
+@import "./layout";
+@import "./typography";
+@import "./margins";
+@import "./form";
+@import "./modal-window";
+@import "./print";
+
+html {
+  /* 62.5% of 16px base font size is 10px */
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  color: $body-color;
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: start;
+  text-size-adjust: 100%;
+}
