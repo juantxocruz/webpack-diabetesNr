@@ -41,11 +41,11 @@ export let dictionary =
     { "key": "label_cho3", "ES": "De 251 a 275", "EN": "From 251 to 275" },
     { "key": "label_cho4", "ES": "De 276 a 300", "EN": "From 276 to 300" },
     { "key": "label_cho5", "ES": "Más de 300", "EN": "More than 300" },
-    { "key": "cho1", "ES": "label_cho1", "EN": "label_cho1" },
-    { "key": "cho2", "ES": "label_cho2", "EN": "label_cho2" },
-    { "key": "cho3", "ES": "label_cho3", "EN": "label_cho3" },
-    { "key": "cho4", "ES": "label_cho4", "EN": "label_cho4" },
-    { "key": "cho5", "ES": "label_cho5", "EN": "label_cho5" },
+    { "key": "cho1", "ES": "Hasta 200", "EN": "Up to 200" },
+    { "key": "cho2", "ES": "De 200 a 250", "EN": "From 200 to 250" },
+    { "key": "cho3", "ES": "De 251 a 275", "EN": "From 251 to 275" },
+    { "key": "cho4", "ES": "De 276 a 300", "EN": "From 276 to 300" },
+    { "key": "cho5", "ES": "Más de 300", "EN": "More than 300" },
     { "key": "results", "ES": "Resultados", "EN": "Results" },
     { "key": "exclusionary_pathology", "ES": "Patología excluyente", "EN": "Exclusionary pathology" },
     { "key": "pathologiesModalSetup_content", "ES": "Esta patología no permite asegurar ningún riesgo.", "EN": "This pathology does not allow to ensure any risk." },
@@ -137,10 +137,13 @@ export let dictionary =
     { "key": "diastolicModalSetup_High_content", "ES": "La tensión diastólica es muy alta para asegurar el riesgo.", "EN": "Diastolic blood pressure is too high to insure risk." },
     { "key": "diastolicModalSetup_Low_content", "ES": "La tensión diastólica es muy baja para asegurar el riesgo.", "EN": "Diastolic blood pressure is too low to ensure risk." },
     { "key": "weightModalSetup_1_content", "ES": "El peso introducido es muy bajo. Debe introducir un peso mayor de", "EN": "The entered weight is too low. You must enter a weight greater than" },
-    { "key": "weightModalSetup_2_content", "ES": "kilos", "EN": "kilos" }];
+    { "key": "weightModalSetup_2_content", "ES": "kilos", "EN": "kilos" },
+    { "key": "ins1", "ES": "Hasta 25 unidades diarias de insulina", "EN": "Up to 25 units of insulin daily" },
+    { "key": "ins2", "ES": "Más de 25 unidades diarias de insulina", "EN": "More than 25 units of insulin daily" }];
 
 export function getDictionaryWord(key) {
-    return dictionary.filter(d => d.key === key)[0][idiom];
+    let term = dictionary.filter(d => d.key === key);
+    return idiom && term && term[0] && term[0][idiom] ? term[0][idiom] : "Upps sorry";
 }
 
 export function setFormDictionary() {
