@@ -1,5 +1,5 @@
 import { getDictionaryWord } from './dictionary';
-
+import { idiom } from './index';
 
 let self = document;
 

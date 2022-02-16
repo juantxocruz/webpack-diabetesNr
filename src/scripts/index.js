@@ -8,7 +8,7 @@ import {
     subtractYearsToDate,
     dateIsOnRange,
     isNumberKey,
-    limitChars, cmToMeter
+    limitChars, cmToMeter, toDateString
 } from "./helpers"
 import { calcAlcohol } from "./alcohol_calc";
 import { calcCholesterol } from './cholesterol_calc';
@@ -22,7 +22,7 @@ import { calcTobacco } from './tobacco_calc';
 import { openModalResults, initModalResults } from './modal_results';
 import { openModalWindow, initModalWindow } from './modal_window';
 
-import { getDictionaryWord, initDictionary } from './dictionary';
+import { getDictionaryWord, setFormDictionary } from './dictionary';
 
 
 
@@ -36,7 +36,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-export let idiom = 'EN';
+export let idiom = 'EN'; // ES
 
 
 let formForm = document.forms["diabetes_form"];
@@ -54,21 +54,21 @@ let pathologiesModalSetup = {
     header: getDictionaryWord("exclusionary_pathology"),
     content: getDictionaryWord("pathologiesModalSetup_content"),
     action: "",
-    footer: getDictionaryWord("pathologiesModalSetup_footer"),
+    footer: getDictionaryWord("modalSetup_footer"),
 }
 
 let birthdayModalSetup = {
-    header: "Fecha incorrecta",
-    content: "La fecha seleccionada no puede ser mayor que la fecha actual.",
-    action: "Por favor, escoga una fecha de nuevo",
-    footer: "© NacionalRe. Todos los derechos reservados."
+    header: getDictionaryWord("birthdayModalSetup_header"),
+    content: getDictionaryWord("birthdayModalSetup_content"),
+    action: getDictionaryWord("birthdayModalSetup_action"),
+    footer: getDictionaryWord("modalSetup_footer"),
 }
 
 let modalSetup = {
-    header: "Atención",
+    header: getDictionaryWord("modalSetup_header"),
     content: "",
     action: "",
-    footer: "© NacionalRe. Todos los derechos reservados."
+    footer: getDictionaryWord("modalSetup_footer"),
 }
 
 
@@ -79,20 +79,21 @@ const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'num
 const systolicRange = [65, 145];
 const diastolicRange = [45, 95];
 
+//+ subtractYearsToDate(new Date(), dateRange[1]).toLocaleDateString('es-ES', dateOptions) + 
 
 
 let dateRangeModalSetup = {
-    header: "Atención: Fecha fuera de rango",
-    content: "Por favor, escoga una fecha en el rango (entre " + dateRange[0] + " y " + dateRange[1] + " años de edad).",
-    action: "La fecha seleccionada debe estar entre el " + subtractYearsToDate(new Date(), dateRange[1]).toLocaleDateString('es-ES', dateOptions) + " y el " + subtractYearsToDate(new Date(), dateRange[0]).toLocaleDateString('es-ES', dateOptions) + ".",
-    footer: "© NacionalRe"
+    header: getDictionaryWord("dateRangeModalSetup_header"),
+    content: getDictionaryWord("dateRangeModalSetup_content_1") + " " + dateRange[0] + " " + getDictionaryWord("dateRangeModalSetup_content_2") + " " + dateRange[1] + " " + getDictionaryWord("dateRangeModalSetup_content_3") + ".",
+    action: getDictionaryWord("dateRangeModalSetup_action_1") + " " + toDateString(subtractYearsToDate(new Date(), dateRange[1]), idiom, dateOptions) + " " + getDictionaryWord("dateRangeModalSetup_action_2") + " " + toDateString(subtractYearsToDate(new Date(), dateRange[0]), idiom, dateOptions) + ".",
+    footer: getDictionaryWord("modalSetup_footer")
 }
 
 let fieldsOffModalSetup = {
-    header: "Atención:",
-    content: "Por favor, rellene correctamente los campos con mensajes en rojo.",
-    action: "Existen campos erróneos o sin rellenar.",
-    footer: "© NacionalRe"
+    header: getDictionaryWord("modalSetup_header"),
+    content: getDictionaryWord("fieldsOffModalSetup_content"),
+    action: getDictionaryWord("fieldsOffModalSetup_action"),
+    footer: getDictionaryWord("modalSetup_footer")
 }
 
 // global results
@@ -405,8 +406,8 @@ function initNumericField(name) {
                 _weight = e.currentTarget.value; // string 
                 parser = !!parseInt(_weight) ? parseInt(_weight) : 0;
                 if (parser <= minWeight) {
-                    modalSetup.content = 'El peso introducido es muy bajo. Debe introducir un peso mayor de ' + minWeight + ' kilos.';
-                    modalSetup.action = "Por favor, asegúrese de que la cifra es correcta."
+                    modalSetup.content = getDictionaryWord("weightModalSetup_1_content") + " " + (minWeight) + " " + getDictionaryWord("weightModalSetup_2_content") + '.';
+                    modalSetup.action = getDictionaryWord("date_is_not_correct");
 
                     if (_weight !== '') {
                         openModalWindow(e, modalSetup);
@@ -429,8 +430,8 @@ function initNumericField(name) {
                 _height = e.currentTarget.value; // string d
                 parser = !!parseInt(_height) ? parseInt(_height) : 0;
                 if (parser <= minHeight) {
-                    modalSetup.content = 'La altura introducida es muy baja. Debe introducir una altura mayor de ' + minHeight + ' centímetros.';
-                    modalSetup.action = "Por favor, asegúrese de que la cifra es correcta."
+                    modalSetup.content = getDictionaryWord("heightModalSetup_1_content") + " " + (minHeight) + " " + getDictionaryWord("heightModalSetup_2_content") + '.';
+                    modalSetup.action = getDictionaryWord("date_is_not_correct");
                     _height = '';
                     e.currentTarget.value = '';
                     body_mass.value = '';
@@ -471,13 +472,13 @@ function initNumericField(name) {
 
                 _systolic = e.currentTarget.value; // string 
                 if (parseInt(_systolic) > systolicRange[1]) {
-                    modalSetup.content = 'La tensión sistólica es muy alta para asegurar el riesgo.';
-                    modalSetup.action = "Por favor, asegúrese de que la cifra es correcta."
+                    modalSetup.content = getDictionaryWord("systolicModalSetup_High_content");
+                    modalSetup.action = getDictionaryWord("date_is_not_correct");
                     openModalWindow(e, modalSetup);
                 }
                 if (parseInt(_systolic) < systolicRange[0]) {
-                    modalSetup.content = 'La tensión sistólica es muy baja para asegurar el riesgo.';
-                    modalSetup.action = "Por favor, asegúrese de que la cifra es correcta."
+                    modalSetup.content = getDictionaryWord("systolicModalSetup_Low_content");
+                    modalSetup.action = getDictionaryWord("date_is_not_correct");
                     openModalWindow(e, modalSetup);
                 }
                 setSystolicColors(formForm.elements['systolic'], _systolic);
@@ -485,13 +486,13 @@ function initNumericField(name) {
             case 'diastolic':
                 _diastolic = e.currentTarget.value; // string 
                 if (parseInt(_diastolic) > diastolicRange[1]) {
-                    modalSetup.content = 'La tensión diastólica es muy alta para asegurar el riesgo.';
-                    modalSetup.action = "Por favor, asegúrese de que la cifra es correcta."
+                    modalSetup.content = getDictionaryWord("diastolicModalSetup_High_content");
+                    modalSetup.action = getDictionaryWord("date_is_not_correct");
                     openModalWindow(e, modalSetup);
                 }
                 if (parseInt(_diastolic) < diastolicRange[0]) {
-                    modalSetup.content = 'La tensión diastólica es muy baja para asegurar el riesgo.';
-                    modalSetup.action = "Por favor, asegúrese de que la cifra es correcta."
+                    modalSetup.content = getDictionaryWord("diastolicModalSetup_Low_content");
+                    modalSetup.action = getDictionaryWord("date_is_not_correct");
                     openModalWindow(e, modalSetup);
                 }
                 setDiastolicColors(formForm.elements['diastolic'], _diastolic);
@@ -618,13 +619,16 @@ function disableEnter() {
 
 
 let init = () => {
+
+
     initForm();
     initModalWindow();
     initModalResults();
     initSubmit();
     initReset();
     disableEnter();
-    initDictionary();
+    setFormDictionary();
+
 };
 
-init();
+document.addEventListener("DOMContentLoaded", init, false);

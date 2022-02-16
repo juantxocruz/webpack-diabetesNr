@@ -73,7 +73,7 @@
                 </p>
 
                 <input class="margin__top-s row numeric" type="date" id="birthday" name="birthday" value=""
-                  autocomplete="off">
+                  autocomplete="off" pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" placeholder="">
                 <p class="mandatory"><span id='birthday_msg'><small id="mandatory_text_2">Fecha
                       obligatoria.</small></span>&nbsp;</p>
 
@@ -237,11 +237,11 @@
 
           </div>
           <div class="col-3">
-            <p class="form-title">Tensión arterial</p>
-            <small>Presión arterial (mm Hg.)</small>
+            <p class="form-title" id="upper_blood_pressure">Tensión arterial</p>
+            <small id="intro_blood_pressure">Presión arterial (mm Hg.)</small>
             <table class="regular margin__top-xs">
               <tr>
-                <td>Sistólica
+                <td><span id="upper-systolic">Sistólica</span>
 
                   <p class="mandatory"><span id='systolic_msg'><small id="mandatory_text_14">Campo
                         obligatorio.</small></span>&nbsp;</p>
@@ -253,7 +253,7 @@
                 </td>
               </tr>
               <tr>
-                <td>Diastólica
+                <td><span id="upper-diastolic">Diastólica</span>
                   <p class="mandatory"><span id='diastolic_msg'><small id="mandatory_text_15">Campo
                         obligatorio.</small></span>&nbsp;</p>
                 </td>
@@ -272,65 +272,75 @@
         <hr class="hr">
         <div class="row">
           <div class="col-4">
-            <p class="form-title">Insulina</p>
-            <small>Cantidades</small>
+            <p class="form-title" id="upper_insulin">Insulina</p>
+            <small id="intro_insulin">Cantidades</small>
             <p class="mandatory"><span id='insulin_msg'><small id="mandatory_text_16">Campo
                   obligatorio.</small></span>&nbsp;</p>
 
             <ul class="vertical">
               <li><input type="radio" id="ins1" name="insulin" value="ins1" autocomplete="off">
-                <label for="ins1">Hasta 25 <small>unidades/día y/o antidiabéticos orales</small></label>
+                <label for="ins1"><span id="ins1_less_25">Hasta 25 </span><small id="ins1_units">unidades/día y/o
+                    antidiabéticos orales</small></label>
               </li>
-              <li><input type="radio" id="ins2" name="insulin" value="ins2" autocomplete="off"> <label for="ins2">Más de
-                  25 <small>unidades/día</small></label>
+              <li><input type="radio" id="ins2" name="insulin" value="ins2" autocomplete="off"> <label for="ins2"><span
+                    id="ins2_more_25">Más de
+                    25</span> <small id="ins2_units">unidades/día</small></label>
               </li>
             </ul>
           </div>
 
           <div class="col-4">
-            <p class="form-title">Hemoglobina glicosilada (HbA1c)</p>
-            <small>Milimol por litro (mmol/l)</small>
+            <p class="form-title" id="upper_glycosylated">Hemoglobina glicosilada (HbA1c)</p>
+            <small id="intro_millimole">Milimol por litro (mmol/l)</small>
             <p class="mandatory"><span id='hemoglobin_msg'><small id="mandatory_text_17">Campo
                   obligatorio.</small></span>&nbsp;</p>
 
 
             <ul class="vertical">
               <li><input type="radio" id="hem1" name="hemoglobin" value="hem1" autocomplete="off">
-                <label for="hem1">Menos de 7,0</label>
+                <label for="hem1" id="label_hem1">Menos de 7,0</label>
               </li>
-              <li><input type="radio" id="hem2" name="hemoglobin" value="hem2" autocomplete="off"> <label for="hem2">de
+              <li><input type="radio" id="hem2" name="hemoglobin" value="hem2" autocomplete="off"> <label for="hem2"
+                  id="label_hem2">de
                   7,0 a 7,5</label></li>
-              <li><input type="radio" id="hem3" name="hemoglobin" value="hem3" autocomplete="off"> <label for="hem3">de
+              <li><input type="radio" id="hem3" name="hemoglobin" value="hem3" autocomplete="off"> <label for="hem3"
+                  id="label_hem3">de
                   7,6 a 8,0</label></li>
-              <li><input type="radio" id="hem4" name="hemoglobin" value="hem4" autocomplete="off"> <label for="hem4">de
+              <li><input type="radio" id="hem4" name="hemoglobin" value="hem4" autocomplete="off"> <label for="hem4"
+                  id="label_hem4">de
                   8,1 a 9,0</label>
               </li>
-              <li><input type="radio" id="hem5" name="hemoglobin" value="hem5" autocomplete="off"> <label for="hem5">de
+              <li><input type="radio" id="hem5" name="hemoglobin" value="hem5" autocomplete="off"> <label for="hem5"
+                  id="label_hem5">de
                   9,1 a 10</label></li>
-              <li><input type="radio" id="hem6" name="hemoglobin" value="hem6" autocomplete="off"> <label for="hem6">Más
+              <li><input type="radio" id="hem6" name="hemoglobin" value="hem6" autocomplete="off"> <label for="hem6"
+                  id="label_hem6">Más
                   de 10</label></li>
             </ul>
           </div>
           <div class="col-4">
-            <p class="form-title">Colesterol total</p>
-            <small>Miligramos por decilitro (mg/dL)</small>
+            <p class="form-title" id="upper_cholesterol">Colesterol total</p>
+            <small id="intro_milligrams">Miligramos por decilitro (mg/dL)</small>
             <p class="mandatory"><span id='cholesterol_msg'><small id="mandatory_text_18">Campo
                   obligatorio.</small></span>&nbsp;</p>
 
 
             <ul class="vertical">
               <li><input type="radio" id="cho1" name="cholesterol" value="cho1" autocomplete="off"> <label
-                  for="cho1">Hasta 200</label>
+                  id="label_cho1" for="cho1">Hasta 200</label>
               </li>
-              <li><input type="radio" id="cho2" name="cholesterol" value="cho2" autocomplete="off"> <label for="cho2">de
+              <li><input type="radio" id="cho2" name="cholesterol" value="cho2" autocomplete="off"> <label for="cho2"
+                  id="label_cho2">de
                   200 a 250</label></li>
-              <li><input type="radio" id="cho3" name="cholesterol" value="cho3" autocomplete="off"> <label for="cho3">de
+              <li><input type="radio" id="cho3" name="cholesterol" value="cho3" autocomplete="off"> <label for="cho3"
+                  id="label_cho3">de
                   251 a 275</label></li>
-              <li><input type="radio" id="cho4" name="cholesterol" value="cho4" autocomplete="off"> <label for="cho4">de
+              <li><input type="radio" id="cho4" name="cholesterol" value="cho4" autocomplete="off"> <label for="cho4"
+                  id="label_cho4">de
                   276 a 300</label>
               </li>
               <li><input type="radio" id="cho5" name="cholesterol" value="cho5" autocomplete="off"> <label
-                  for="cho5">Más de 300</label></li>
+                  id="label_cho5" for="cho5">Más de 300</label></li>
             </ul>
           </div>
 
