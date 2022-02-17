@@ -30,38 +30,38 @@ export function initModalResults() {
 
 function getYearsDiabetes(num) {
     if (+num > 1) {
-        return num + ' años';
+        return num + " " + getDictionaryWord("r_years");
     }
     if (+num === 1) {
-        return num + ' año';
+        return num + " " + getDictionaryWord("r_year");
     }
-    return 'Sin años de antigüedad';
+    return getDictionaryWord("r_no_years");
 }
 
 
 function getAlcohol(beers, wines, spirits) {
     let result = '';
     if (beers === 0 && wines === 0 && spirits === 0) {
-        result += 'No consume alcohol';
+        result += getDictionaryWord("r_no_alcohol");
         return result;
     } else {
         if (beers === 0 || beers > 1) {
-            result += beers + ' cervezas + | ';
+            result += beers + " " + getDictionaryWord("r_beers") + ' | ';
         }
         if (beers === 1) {
-            result += '1 cerveza | ';
+            result += getDictionaryWord("r_beer") + ' | ';
         }
         if (wines === 0 || wines > 1) {
-            result += wines + ' vinos + | ';
+            result += wines + " " + getDictionaryWord("r_wines") + ' | ';
         }
         if (wines === 1) {
-            result += '1 vino | ';
+            result += getDictionaryWord("r_wine") + ' | ';
         }
         if (spirits === 0 || spirits > 1) {
-            result += spirits + ' licores';
+            result += spirits + " " + getDictionaryWord("r_liqueurs") + ' | ';
         }
         if (spirits === 1) {
-            result += '1 licor';
+            result += getDictionaryWord("r_liquor");
         }
     }
     return result;
@@ -70,28 +70,28 @@ function getAlcohol(beers, wines, spirits) {
 function getTobacco(cigarettes, cigars, pipes) {
     let result = '';
     if (cigarettes === 0 && cigars === 0 && pipes === 0) {
-        result += 'No consume tabaco';
+        result += getDictionaryWord("r_no_tobacco");
         return result;
     } else {
         if (cigarettes === 0 || cigarettes > 1) {
-            result += cigarettes + ' cigarrillos | ';
+            result += cigarettes + " " + getDictionaryWord("r_cigarettes") + ' | ';
         }
         if (cigarettes === 1) {
-            result += '1 cigarrillo | ';
+            result += getDictionaryWord("r_cigarette") + ' | ';
         }
 
         if (cigars === 0 || cigars > 1) {
-            result += cigars + ' puros | ';
+            result += cigars + " " + getDictionaryWord("r_cigars") + ' | ';
         }
         if (cigars === 1) {
-            result += '1 puro | ';
+            result += getDictionaryWord("r_cigar") + ' | ';
         }
 
         if (pipes === 0 || pipes > 1) {
-            result += pipes + ' pipas';
+            result += pipes + " " + getDictionaryWord("r_pipes") + ' | ';
         }
         if (pipes === 1) {
-            result += pipes + ' pipa';
+            result += pipes + " " + getDictionaryWord("r_pipe");
         }
 
     }
@@ -100,10 +100,10 @@ function getTobacco(cigarettes, cigars, pipes) {
 
 function getPartialResult(number) {
     if (number >= 999) {
-        return '<span class="red">Rechazar</span>';
+        return '<span class="red">' + getDictionaryWord("r_refuse") + '</span>';
     }
     if (number === 0) {
-        return '<span class="green">Normal</span>';
+        return '<span class="green">' + getDictionaryWord("r_normal") + '</span>';
     }
     if (number > 0) {
         return '<span class="red"> +' + number + '%</span>';
@@ -122,47 +122,47 @@ function getTableResult(data, key) {
     table += '<table class="result-table" style="width:100%">';
     table += '<tr><th </th><th></th></tr>';
     table += '<tr>';
-    table += '<td>Antigüedad diabetes</td>';
+    table += '<td>' + getDictionaryWord('tr_diabetes') + '</td>';
     table += ' <td>' + getPartialResult(data.diabetesByYears[key]) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Edad candidato</td>';
+    table += '<td>' + getDictionaryWord('tr_age') + '</td>';
     table += ' <td>' + getPartialResult(data.diabetesByAge[key]) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>IMC</td>';
+    table += '<td>' + getDictionaryWord('tr_bmi') + '</td>';
     table += ' <td>' + getPartialResult(data.imc[key]) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Tabaco</td>';
+    table += '<td>' + getDictionaryWord('tr_tobacco') + '</td>';
     table += ' <td>' + getPartialResult(data.tobacco) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Alcohol</td>';
+    table += '<td>' + getDictionaryWord('tr_alcohol') + '</td>';
     table += ' <td>' + getPartialResult(data.alcohol) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Tensión</td>';
+    table += '<td>' + getDictionaryWord('tr_tension') + '</td>';
     table += ' <td>' + getPartialResult(data.hypertension) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Hemoglobina</td>';
+    table += '<td>' + getDictionaryWord('tr_hemoglobin') + '</td>';
     table += ' <td>' + getPartialResult(data.hemoglobin) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Insulina</td>';
+    table += '<td>' + getDictionaryWord('tr_insulin') + '</td>';
     table += ' <td>' + getPartialResult(data.insulin) + '</td>';
     table += ' </tr>';
 
     table += '<tr>';
-    table += '<td>Colesterol</td>';
+    table += '<td>' + getDictionaryWord('tr_cholesterol') + '</td>';
     table += ' <td>' + getPartialResult(data.cholesterol) + '</td>';
     table += ' </tr>';
     table += '</table>';
@@ -179,20 +179,20 @@ export function openModalResults(event, _vars, $results) {
     // vars
     let newDate = new Date(_vars.today);
     let year = newDate.getFullYear();
-    let today = newDate.getDate() + '/' + (newDate.getMonth() + 1) + '/' + newDate.getFullYear() + ' a las ' + (newDate.getUTCHours() + 1) + ':' + newDate.getUTCMinutes() + 'h.';
+    let today = newDate.getDate() + '/' + (newDate.getMonth() + 1) + '/' + newDate.getFullYear() + " " + getDictionaryWord('p_at') + " " + (newDate.getUTCHours() + 1) + ':' + newDate.getUTCMinutes() + getDictionaryWord('p_hours');
     let gender = getDictionaryWord(_vars.gender);
     let bornDate = new Date(_vars.date);
     let date = bornDate.getDate() + '/' + (bornDate.getMonth() + 1) + '/' + bornDate.getFullYear() + '';
-    let age = _vars.age + ' años';
-    let height = _vars.height + ' cm';
-    let weight = _vars.weight + ' kg';
-    let imc = _vars.imc + ' imc';
-    let diabetes = 'Diabetes ' + getDictionaryWord(_vars.diabetes);
-    let systolic = _vars.systolic + ' sistólica';
-    let diastolic = _vars.diastolic + ' diastólica';
+    let age = _vars.age + " " + getDictionaryWord("r_years");
+    let height = _vars.height + " " + getDictionaryWord("r_cm");
+    let weight = _vars.weight + " " + getDictionaryWord("r_kg");
+    let imc = _vars.imc + " " + getDictionaryWord("r_bmi");
+    let diabetes = getDictionaryWord("r_diabetes") + " " + getDictionaryWord(_vars.diabetes);
+    let systolic = _vars.systolic + " " + getDictionaryWord("r_systolic");
+    let diastolic = _vars.diastolic + " " + getDictionaryWord("r_diastolic");
     let insulin = getDictionaryWord(_vars.insulin);
-    let hemoglobin = getDictionaryWord(_vars.hemoglobin) + ' hemoglobina';
-    let cholesterol = getDictionaryWord(_vars.cholesterol) + ' colesterol';
+    let hemoglobin = getDictionaryWord(_vars.hemoglobin) + " " + getDictionaryWord("r_hemoglobin");
+    let cholesterol = getDictionaryWord(_vars.cholesterol) + " " + getDictionaryWord("r_cholesterol");
     let alcohol = getAlcohol(parseInt(_vars.beers), parseInt(_vars.wines), parseInt(_vars.spirits));
     let tobacco = getTobacco(parseInt(_vars.cigarettes), parseInt(_vars.cigars), parseInt(_vars.pipes));
 

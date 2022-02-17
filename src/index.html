@@ -374,7 +374,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <span class="close" id="close_modal_info">&times;</span>
-          <h2 id="modal_header_span">Atención</h2>
+          <h2 id="modal_header_span"><span id="h_attention">Atención</span></h2>
         </div>
         <div class="modal-body">
           <p> <strong><span id="modal_body1_span">Patología</span></strong></p>
@@ -394,13 +394,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <span class="close" id='close_modal_result'>&times;</span>
-          <h2 id="modal_header_span">Resultados</h2>
+          <h2 id="modal_header_span"><span id="h_results">Resultados</span></h2>
         </div>
         <div class="modal-body">
           <div class="container modal">
             <div class="row">
               <div class="col-12">
-                <p class="selection small">Consulta realizada el <span id="result_today"></span></p>
+                <p class="selection small"><span id="p_consultation">Consulta realizada el </span> <span
+                    id="result_today"></span></p>
                 <p class="small"><span id="result_vars_constitution">
                     <!-- Hombre | 11/01/1965 | 56 años | 75kg | 180 cm | 24,6 imc  -->
                   </span></p>
@@ -426,7 +427,7 @@
 
                 <div class="result-icon life">
                 </div>
-                <h3 class="result">Fallecimiento</h3>
+                <h3 class="result" id="h_death">Fallecimiento</h3>
                 <p class="big-number"><span id='result_total_life'>&nbsp;</span></p>
                 <div id="result_table_life"></div>
 
@@ -436,7 +437,7 @@
               <div class="col-3">
                 <div class="result-icon disability">
                 </div>
-                <h3 class="result">Invalidez</h3>
+                <h3 class="result" id="h_disability">Invalidez</h3>
                 <p class="big-number"><span id='result_total_disability'>&nbsp;</span></p>
                 <div id="result_table_disability"></div>
 
@@ -444,23 +445,24 @@
               <div class="col-3">
                 <div class="result-icon accident">
                 </div>
-                <h3 class="result">Accidentes</h3>
+                <h3 class="result" id="h_accidents">Accidentes</h3>
                 <p class="big-number"><span id='result_total_accident'>&nbsp;</span></p>
                 <div id="result_table_accident"></div>
               </div>
               <div class="col-3">
                 <div class="result-icon ilt"></div>
-                <h3 class="result">I.L.T.</h3>
+                <h3 class="result" id="h_temporary_incapacity">I.L.T.</h3>
                 <p class="big-number"><span id='result_total_ilt'>&nbsp;</span></p>
                 <div id="result_table_ilt"></div>
               </div>
             </div>
             <div class="modal-print">
-              <button onclick="window.print()">Imprimir</button>
+              <button onclick="window.print()"><span id="b_print">Imprimir</span></button>
             </div>
           </div>
           <div class="modal-footer">
-            <p><small><span id="result_year"></span>©NacionalRe. Todos los derechos reservados.</small></p>
+            <p><small><span id="result_year"></span><span id="modalSetup_footer">© NacionalRe. Todos los derechos
+                  reservados.</span></small></p>
           </div>
         </div>
 

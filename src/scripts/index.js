@@ -36,7 +36,20 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 
-export let idiom = 'EN'; // ES
+// export let idiom = 'ES'; // ES OR EN
+
+export let idiom = getLang(); // ES OR EN
+
+function getLang() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const lang = urlParams.get('lang');
+
+    return lang ? lang.toUpperCase() : 'ES';
+
+
+}
+
 
 
 let formForm = document.forms["diabetes_form"];
@@ -616,6 +629,7 @@ function disableEnter() {
     },
         true);
 }
+
 
 
 let init = () => {
