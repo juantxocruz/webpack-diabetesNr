@@ -10,6 +10,8 @@ Webpack 5 Diabetes Calculator NacionalRe
 npm install
 ```
 
+npm
+
 ### Start Dev Server
 
 http://localhost:8080/
@@ -28,13 +30,13 @@ npm run build
 
 Default language is Spanish.
 
-```sh
+````sh
 http://localhost:8080/?lang=es
-```
+```npm
 
 ```sh
 http://localhost:8080/?lang=en
-```
+````
 
 ### Features:
 
