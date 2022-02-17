@@ -1,4 +1,4 @@
-# Webpack 5 VidaNr calculator
+# Webpack 5 Diabetes Insurance calculator
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
