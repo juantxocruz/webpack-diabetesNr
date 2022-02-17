@@ -24,6 +24,18 @@ npm start
 npm run build
 ```
 
+### Languages:Spanish and English.
+
+Default language is Spanish.
+
+```sh
+http://localhost:8080/?lang=es
+```
+
+```sh
+http://localhost:8080/?lang=en
+```
+
 ### Features:
 
 - ES6 Support via [babel](https://babeljs.io/) (v7)
