@@ -1,14 +1,33 @@
 <!doctype html>
-<html lang="es-ES" class="responsive">
+<html class="responsive">
 
 <head>
-  <title>Vida-calc</title>
+  <title>DiabetesNR-calc</title>
   <meta charset="utf-8">
   <meta name="author" content="Juantxo Cruz">
-  <meta name="description" content="Caculadora de riesgos Vida, NacionalRe">
+  <meta name="description" content="Caculadora de diabetes, NacionalRe">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
+
+  <script type="application/javascript">
+    // html language
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const lang = urlParams.get('lang').toLowerCase();
+    const htmlLang = lang === 'es' ? 'es' : 'en';
+    let navigatorLang = navigator.language || navigator.userLanguage;
+
+
+    document.documentElement.lang = htmlLang;
+    document.documentElement.setAttribute("lang", htmlLang);
+
+    console.log('lang-->', document.documentElement.lang, document.documentElement.getAttribute('lang'), navigatorLang);
+    let x;
+
+
+  </script>
 
 </head>
 

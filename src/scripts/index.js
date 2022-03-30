@@ -40,14 +40,13 @@ if (process.env.NODE_ENV !== 'production') {
 
 export let idiom = getLang(); // ES OR EN
 
+
 function getLang() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const lang = urlParams.get('lang');
 
     return lang ? lang.toUpperCase() : 'ES';
-
-
 }
 
 
@@ -528,10 +527,30 @@ function initNumericField(name) {
 
 
 
+function setNumericLang(lang) {
+    // input max min setCustomValidity message idiom
+    let elems = document.querySelectorAll('input', 'html');
+    for (let i = 0; i < elems.length; i++) {
+        elems[i].setAttribute('lang', lang.toLowerCase());
+    }
+}
+
+function InvalidMsg(textbox) {
+    if (textbox.value == '') {
+        textbox.setCustomValidity('Lütfen işaretli yerleri doldurunuz');
+    }
+    else if (textbox.validity.typeMismatch) {
+        textbox.setCustomValidity('Lütfen işaretli yere geçerli bir email adresi yazınız.');
+    }
+    else {
+        textbox.setCustomValidity('');
+    }
+    return true;
+}
 
 
 function initForm() {
-
+    setNumericLang(idiom);
     setNumericField();
     initPathologies();
     initRadioButtons('gender');
