@@ -1,7 +1,7 @@
 {
-  "name": "nacionalRe VidaNr",
+  "name": "webpackdiabetesNr",
   "version": "1.0.0",
-  "description": "VidaNr calculator frontend project based on webpack 5.",
+  "description": "Diabetes calculator frontend project based on webpack 5.",
   "scripts": {
     "lint": "npm run lint:styles; npm run lint:scripts",
     "lint:styles": "stylelint src",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juantxocruz/webpack-vidaNr.git"
+    "url": "git+https://github.com/juantxocruz/webpack-diabetesNr.git"
   },
   "keywords": [
     "webpack",

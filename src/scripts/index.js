@@ -665,3 +665,25 @@ let init = () => {
 };
 
 document.addEventListener("DOMContentLoaded", init, false);
+
+// https://stackoverflow.com/questions/5272433/html5-form-required-attribute-set-custom-validation-message
+// http://jsfiddle.net/hleinone/njSbH/
+document.addEventListener("DOMContentLoaded", function () {
+    var elements = document.getElementsByTagName("INPUT");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].oninvalid = function (e) {
+            e.target.setCustomValidity("");
+            if (!e.target.validity.valid) {
+                if (idiom === "EN") {
+                    e.target.setCustomValidity("This field is out of the allowed range");
+                } else {
+                    e.target.setCustomValidity("Este campo esta fuera del rango permitido");
+                }
+
+            }
+        };
+        elements[i].oninput = function (e) {
+            e.target.setCustomValidity("");
+        };
+    }
+})
