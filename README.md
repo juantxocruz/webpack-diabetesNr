@@ -22,21 +22,38 @@ npm start
 
 ### Build Prod Version
 
+Building Local
 ```sh
 npm run build
+```
+
+Building NacionalRe
+```sh
+npm run build:nacionalRe
 ```
 
 ### Languages:Spanish and English.
 
 Default language is Spanish.
 
-````sh
+```sh
 http://localhost:8080/?lang=es
-```npm
+```
 
 ```sh
 http://localhost:8080/?lang=en
-````
+```
+
+On server:
+
+```sh
+https://botsoul.com/pruebas/nacionalRe-diabetes/build/?lang=es
+```
+
+```sh
+https://botsoul.com/pruebas/nacionalRe-diabetes/build/?lang=en
+```
+
 
 ### Features:
 
