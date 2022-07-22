@@ -797,7 +797,7 @@ En catellano:
 ```bash
 http://localhost:8080/?lang=ES
 
-http://davinci.nacionalre.es/nacionalRe-vidaNr/build/?lang=es
+http://davinci.nacionalre.es/nacionalRe-diabetes/build/?lang=es
 
 ```
 
@@ -805,7 +805,7 @@ En inglés:
 ```bash
 http://localhost:8080/?lang=EN
 
-http://davinci.nacionalre.es/nacionalRe-vidaNr/build/?lang=en
+http://davinci.nacionalre.es/nacionalRe-diabetes/build/?lang=en
 ```
 
 
