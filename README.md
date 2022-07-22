@@ -377,9 +377,131 @@ Miligramos por decilitro.
 ### Edad 
 La edad real se utiliza en todos los cálculos.
 
+### Tipo de diabetes y edad del individuo
 
-### 
-### Alcohol
+Según la edad del individuo y el tipo de diabetes se establecen los siguientes cálculos:
+
+- Diabetes Tipo 1 y 2: Vida
+
+
+```bash
+// Diabetes Tipo 1 y tipo 2: Vida
+if (type === 't1') {
+        if (age <= 19) {
+            result += 0;
+        }
+        if (age > 19 && age <= 24) {
+            result += 250;
+        }
+        if (age > 24 && age <= 29) {
+            result += 200;
+        }
+        if (age > 29 && age <= 40) {
+            result += 150;
+        }
+        if (age > 40) {
+            result += 100;
+        }
+    }
+    if (type === 't2') {
+        if (age <= 29) {
+            result += 200;
+        }
+        if (age > 29 && age <= 39) {
+            result += 150;
+        }
+        if (age > 39 && age <= 49) {
+            result += 75;
+        }
+        if (age > 49) {
+            result += 25;
+        }
+    }
+```
+
+
+- Diabetes Tipos 1 y y 2: Invalidez y accidente.
+
+```bash
+// Diabetes Tipo 1 y tipo 2: Invalidez y accidente.
+if (type === 't1') {
+        result += 999;
+    }
+    if (type === 't2') {
+        if (age <= 39) {
+            result += 999;
+        }
+        if (age > 39 && age <= 49) {
+            result += 100;
+        }
+        if (age > 49) {
+            result += 25;
+        }
+    }
+```
+
+
+- Diabetes Tipo 1 y tipo 2: Garantías ILT
+
+No hay tabla de recargos para ILT (incapacidad laboral temporal). 
+Se entiende que no suma (o que suma 0) para todas las tarifas.
+
+
+- Tablas:
+
+[diabetes_edad_tipo_1_vida.csv](docs/diabetes_edad_tipo_1_vida.csv).
+
+[diabetes_edad_tipo_2_vida.csv](docs/diabetes_edad_tipo_2_vida.csv).
+
+
+
+![diabetes_edad_vida][diabetes_edad_vida]
+
+
+### Diabetes y antigüedad
+
+Según la antigüedad de la diabeted y el tipo de diabetes se establecen los siguientes cálculos:
+
+- Diabetes Tipo 1: Vida, invalidez y accidentes
+
+[diabetes_tiempo_tipo_1_vida.csv](docs/diabetes_tiempo_tipo_1_vida.csv).
+
+- Diabetes Tipo 2: Vida, invalidez y accidentes:
+
+[diabetes_tiempo_tipo_2_vida.csv](docs/diabetes_tiempo_tipo_2_vida.csv).
+
+El siguiente cuadro es para la tarificación de Vida, invalidez y accidentes dependiendo de la fecha de diagnóstico.
+![diabetes_tiempo_vida][diabetes_tiempo_vida]
+
+
+
+- Diabetes Tipo 1: ILT
+
+[diabetes_tiempo_tipo_1_ILT.csv](docs/diabetes_tiempo_tipo_1_ILT.csv).
+
+
+- Diabetes Tipo 2: ILT:
+
+[diabetes_tiempo_tipo_2_ILT.csv](docs/diabetes_tiempo_tipo_2_ILT.csv).
+
+El siguiente cuadro es para la tarificación de ILT dependiendo de la fecha de diagnóstico.
+![diabetes_tiempo_ILT][diabetes_tiempo_ILT]
+
+
+### Recargos imc
+
+### Recargos tensión arterial
+
+### Recargos alcohol
+
+### Recargos tabaco
+
+### Recargos hemoglobina
+
+### Recargos insulina
+
+### Recargos colesterol
+
 
 <!-- MISCELANEA -->
 
@@ -454,3 +576,9 @@ Project Link: [https://github.com/juantxocruz/webpack-diabetesNr](https://github
 
 [formulario diabetesNr]: img/diabetesNR-form.png
 [result diabetesNr]: img/diabetesNR-result.png
+[diabetes_edad_vida]: img/diabetes_edad_vida.png
+[diabetes_tiempo_vida]: img/diabetes_tiempo_vida.png
+[diabetes_tiempo_ILT]: img/diabetes_tiempo_ILT.png
+
+
+

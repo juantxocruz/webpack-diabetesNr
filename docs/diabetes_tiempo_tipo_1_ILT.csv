@@ -1,0 +1,7 @@
+﻿diabetes,tiempo_hasta,ILT
+tipo_1,>=10 años,25
+tipo_1,11-20,50
+tipo_1,21-25,75
+tipo_1,26-30,100
+tipo_1,31-35,150
+tipo_1,>35,999
