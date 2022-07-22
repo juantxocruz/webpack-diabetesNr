@@ -1,0 +1,187 @@
+﻿key,ES,EN
+admission_less,Ingreso hace menos de 6 meses por una complicación,Admission less than 6 months ago for a complication
+age,edad,age
+alcohol_daily_consumption,Consumo diario,Daily consumption
+arterial_disease,Enfermedad arterial periférica,Peripheral arterial disease
+b_print,Imprimir,Print
+beers,cerveza,beers
+birthdayModalSetup_action,"Por favor, escoga una fecha de nuevo",Please choose a date again
+birthdayModalSetup_content,La fecha seleccionada no puede ser mayor que la fecha actual.,The selected date cannot be greater than the current date.
+birthdayModalSetup_header,Fecha incorrecta,Incorrect date
+cbox_msg,Estas patologías no permite asegurar ningún riesgo.,These pathologies do not allow to ensure any risk.
+cho1,Hasta 200,Up to 200
+cho2,De 200 a 250,From 200 to 250
+cho3,De 251 a 275,From 251 to 275
+cho4,De 276 a 300,From 276 to 300
+cho5,Más de 300,More than 300
+cholesterol,colesterol,cholesterol
+cigarettes,cigarrillo,cigarettes
+cigars,puro,cigars
+constitution,Constitución,Constitution
+coronary_heart_disease,"Enfermedad coronaria (Angina, I.A.M.)",Coronary heart disease
+date,fecha,date
+date_is_not_correct,"Por favor, asegúrese de que la cifra es correcta.",Please make sure the figure is correct.
+dateRangeModalSetup_action_1,La fecha seleccionada debe estar entre el ,The selected date must be between
+dateRangeModalSetup_action_2,y el ,and the
+dateRangeModalSetup_content_1,"Por favor, escoga una fecha en el rango (entre ",Please choose a date in the range (between
+dateRangeModalSetup_content_2,y,and
+dateRangeModalSetup_content_3,años de edad),year old)
+dateRangeModalSetup_header,Atención: Fecha fuera de rango,Attention: Date out of range
+diabetes,diabetes,diabetes
+Diabetes,Diabetes,Diabetes
+diastolic,diastólica,diastolic
+diastolicModalSetup_High_content,La tensión diastólica es muy alta para asegurar el riesgo.,Diastolic blood pressure is too high to insure risk.
+diastolicModalSetup_Low_content,La tensión diastólica es muy baja para asegurar el riesgo.,Diastolic blood pressure is too low to ensure risk.
+exclusionary_pathology,Patología excluyente,Exclusionary pathology
+Fecha,Campo obligatorio,Mandatory field
+female,Mujer,Female
+fieldsOffModalSetup_action,Existen campos erróneos o sin rellenar.,There are erroneous or unfilled fields.
+fieldsOffModalSetup_content,"Por favor, rellene correctamente los campos con mensajes en rojo.",Please fill in the fields with messages in red correctly.
+gender,género,gender
+gender_upper,Género,Gender
+h_accidents,Accidentes,Accidents
+h_attention,Atención,Attention
+h_death,Fallecimiento,Death
+h_disability,Invalidez,Disability
+h_results,Resultados de los seguros para diabéticos,Diabetic insurance results
+h_temporary_incapacity,Incapacidad laboral temporal,Temporary incapacity for work
+height,altura,height
+height_cm,Altura (cm),Height (cm)
+heightModalSetup_1_content,La altura introducida es muy baja. Debe introducir una altura mayor de,The entered height is too low. You must enter a height greater than
+heightModalSetup_2_content,centímetros,centimeters
+hem1,"Menos de 7,0",Less than 7.0
+hem2,"De 7,0 a 7,5",7.0 to 7.5
+hem3,"De 7,6 a 8,0",From 7.6 to 8.0
+hem4,"De 8,1 a 9,0",From 8.1 to 9.0
+hem5,"De 9,1 a 10",From 9.1 to 10
+hem6,Más de 10,More than 10
+hemoglobin,hemoglobina,hemoglobin
+imc,índice de masa muscular,body mass index
+ins1,Hasta 25 unidades diarias de insulina,Up to 25 units of insulin daily
+ins1_less_25,Hasta 25 ,Up to 25 
+ins1_units,unidades diarias de insulina,units of insulin daily
+ins2,Más de 25 unidades diarias de insulina,More than 25 units of insulin daily
+ins2_more_25,Más de 25,More than 25
+ins2_units,unidades diarias de insulina,units of insulin daily
+insulin,insulina,insulin
+insulin,Insulina,Insulin
+intro_blood_pressure,Presión arterial (mm Hg.). Teclee al menos una toma.,Blood pressure (mmHg)
+intro_insulin,Cantidades,Quantities
+intro_milligrams,Miligramos por decilitro (mg/dL),Milligrams per deciliter (mg/dL)
+intro_millimole,Milimol por litro (mmol/l),Millimole per liter (mmol/l)
+kidney_disease,Enfermedad renal asociada,Associated kidney disease
+label_cho1,Hasta 200,Up to 200
+label_cho2,De 200 a 250,From 200 to 250
+label_cho3,De 251 a 275,From 251 to 275
+label_cho4,De 276 a 300,From 276 to 300
+label_cho5,Más de 300,More than 300
+label_hem1,"Menos de 7,0",Less than 7.0
+label_hem2,"De 7,0 a 7,5",7.0 to 7.5
+label_hem3,"De 7,6 a 8,0",From 7.6 to 8.0
+label_hem4,"De 8,1 a 9,0",From 8.1 to 9.0
+label_hem5,"De 9,1 a 10",From 9.1 to 10
+label_hem6,Más de 10,More than 10
+male,Hombre,Male
+man,Hombre,Man
+mandatory_text_1,Fecha nacimiento,Birth date
+mandatory_text_10,Campo obligatorio,Mandatory field
+mandatory_text_11,Campo obligatorio,Mandatory field
+mandatory_text_12,Campo obligatorio,Mandatory field
+mandatory_text_13,Campo obligatorio,Mandatory field
+mandatory_text_14,Campo obligatorio,Mandatory field
+mandatory_text_15,Campo obligatorio,Mandatory field
+mandatory_text_16,Campo obligatorio,Mandatory field
+mandatory_text_17,Campo obligatorio,Mandatory field
+mandatory_text_18,Campo obligatorio,Mandatory field
+mandatory_text_2,Campo obligatorio,Mandatory field
+mandatory_text_3,Campo obligatorio,Mandatory field
+mandatory_text_4,Campo obligatorio,Mandatory field
+mandatory_text_5,Campo obligatorio,Mandatory field
+mandatory_text_6,Campo obligatorio,Mandatory field
+mandatory_text_7,Campo obligatorio,Mandatory field
+mandatory_text_8,Campo obligatorio,Mandatory field
+mandatory_text_9,Campo obligatorio,Mandatory field
+mass_index,índice de masa,Mass index
+modalSetup_footer,""" © NacionalRe. Todos los derechos reservados.""",""" © NacionalRe. All rights reserved."""
+modalSetup_header,Atención,Attention
+neuropathy,Neuropatía,Neuropathy
+old_diabetes,Antigüedad diabetes,Age of diabetes
+p_at,a las,at
+p_consultation,Consulta realizada el,Consultation made on
+p_hours,h.,h.
+pathologiesModalSetup_content,Esta patología no permite asegurar ningún riesgo.,This pathology does not allow to ensure any risk.
+pdf_button,Cuestionario,Questionnaire
+pipes,pipa,pipes
+r_beer,1 cerveza,1 beer
+r_beers,cervezas,beers
+r_bmi,imc,bmi
+r_cholesterol,colesterol,cholesterol
+r_cigar,1 puro,1 cigar
+r_cigarette,1 cigarrillo,1 cigarette
+r_cigarettes,cigarrillos,cigarettes
+r_cigars,puros,cigars
+r_cm,cm,cm
+r_diabetes,Diabetes,Diabetes
+r_diastolic,diastólica,diastolic
+r_hemoglobin,hemoglobina,hemoglobin
+r_kg,kg,kg
+r_liqueurs,licores,liqueurs
+r_liquor,1 licor,1 liquor
+r_no_alcohol,No consume alcohol,Does not consume alcohol
+r_no_tobacco,No consume tabaco,Does not use tobacco
+r_no_years,Sin años de antigüedad,No years old
+r_normal,Normal,Normal
+r_pipes,pipas,pipes
+r_pipes,pipa,pipe
+r_refuse,Rechazar,To refuse
+r_systolic,sistólica,systolic
+r_wines,vinos,wines
+r_wines,1 vino ,1 wine
+r_year,año,year
+r_years,años,years
+reset_button,Restaurar,Reset
+results,Resultados,Results
+retinopathy,Retinopatía,Retinopathy
+spirits,licor,spirits
+stroke,Accidente cerebrovascular,Stroke
+submit_button,Tarificación,Calculate
+suffered_pathologies,¿Ha padecido alguna de las siguiente patologías?,Have you suffered from any of the following pathologies?
+systolic,sistólica,systolic
+systolicModalSetup_High_content,La tensión sistólica es muy alta para asegurar el riesgo.,Systolic blood pressure is too high to ensure risk.
+systolicModalSetup_Low_content,La tensión sistólica es muy baja para asegurar el riesgo.,Systolic blood pressure is too low to ensure risk.
+t1,tipo 1,type I
+t2,tipo 2,type II
+tobacco_daily_consumption,Consumo diario,Daily consumption
+tr_age,Edad candidato,Candidate age
+tr_alcohol,Alcohol,Alcohol
+tr_bmi,IMC,BMI
+tr_cholesterol,Colesterol,Cholesterol
+tr_diabetes,Antigüedad diabetes,Age of diabetes
+tr_hemoglobin,Hemoglobina,Hemoglobin
+tr_insulin,Insulina,Insulin
+tr_tension,Tensión,Tension
+tr_tobacco,Tabaco,Tobacco
+type_I,Tipo I,Type I
+type_II,Tipo II,Type II
+upper_alcohol,Alcohol,Alcohol
+upper_beers,Cervezas,Beers
+upper_blood_pressure,Tensión arterial,Blood pressure
+upper_cholesterol,Colesterol total,Total cholesterol
+upper_cigarettes,Cigarrilos,Cigarettes
+upper_cigars,Puros,Cigars
+upper_glycosylated,Hemoglobina glicosilada (HbA1c),Glycosylated Hemoglobin (HbA1c)
+upper_insulin,Insulina,Insulin
+upper_pipes,Pipas,Pipes
+upper_spirits,Licores,Spirits
+upper_tobacco,Tabaco,Tobacco
+upper_wines,Vinos,Wines
+upper-diastolic,Diastólica,Diastolic
+upper-systolic,Sistólica,Systolic
+weight_kg,Peso (kg),Weight (kg)
+weightModalSetup_1_content,El peso introducido es muy bajo. Debe introducir un peso mayor de,The entered weight is too low. You must enter a weight greater than
+weightModalSetup_2_content,kilos,kilos
+weigth,peso,weigth
+wines,vino,wines
+woman,Mujer,Woman
+years_diagnosis,Años desde diagnóstico:,Years since diagnosis:
+yearsDiabetes,años de tratamiento de diabetes,years of diabetes treatment
