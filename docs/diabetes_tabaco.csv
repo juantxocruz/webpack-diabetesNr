@@ -1,0 +1,5 @@
+﻿diabetes,unidades,"vida, invalidez, accidentes e ILT"
+tabaco,<=10,25
+tabaco,11-15,50
+tabaco,16-20,75
+tabaco,>=21,999

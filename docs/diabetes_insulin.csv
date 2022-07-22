@@ -1,0 +1,3 @@
+﻿diabetes,unidades_dia,"fallecimiento, invalidez, accidentes e I.L.T."
+insulin,<=25,0
+insulin,>25,25

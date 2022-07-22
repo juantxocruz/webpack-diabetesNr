@@ -1,0 +1,7 @@
+﻿Diabetes,mmol,"fallecimiento, invalidez, accidentes e I.L.T."
+Hemoglobin,<7,0
+Hemoglobin,7-7.5,25
+Hemoglobin,7.6-8,50
+Hemoglobin,8.1-9,75
+Hemoglobin,9.1-10,100
+Hemoglobin,>10,999

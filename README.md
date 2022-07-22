@@ -2,25 +2,25 @@
 Webpack 5 Diabetes Calculator NacionalRe
 
 
-Patologías
-Género
-Edad
-Tipo de diabetes
-Antigüedad de la diabetes
-Peso
-Altura
-IMC
-Tabaco y alcohol
-Presión arterial
-Insulina
-Hemoglobina
-Colesterol
+
 
 
 Cálculo inicial de los recargos
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Tabla de contenidos</summary>
+
+  
+
+
+Recargos tensión arterial
+Recargos insulina
+Recargos hemoglobina
+Recargos colesterol
+
+
+
+
   <ol>
    <li><a href="#desarrollo">Desarrollo</a></li>
     <li>
@@ -48,17 +48,21 @@ Cálculo inicial de los recargos
          </li>
           <li><a href="#cálculo-inicial-de-los-recargos">Cálculo inicial de los recargos</a>
             <ul>
-                <li><a href="#alcohol">Alcohol</a></li>
-                <li><a href="#colesterol">Colesterol</a></li>
-                <li><a href="#hipertensión">Hipertensión</a></li>
-                <li><a href="#índice-de-masa-muscular">Índice de masa muscular</a></li>
-                 <li><a href="#tensión">Tensión</a></li>
-                  <li><a href="#tabaco">Tabaco</a></li>
+                <li><a href="#tipo-de-diabetes-y-edad-del-individuo">Tipo de diabetes y edad del individuo</a></li>
+                <li><a href="#diabetes-y-antigüedad">Diabetes y antigüedad</a></li>
+                <li><a href="#recargos-imc">Recargos IMC</a></li>
+                <li><a href="#recargos-tabaco">Recargos tabaco</a></li>
+                <li><a href="#recargos-alcohol">Recargos alcohol</a></li>
+                <li><a href="#recargos-tensión-arterial">Recargos tensión arterial</a></li>
+                <li><a href="#recargos-insulina">Recargos insulina</a></li>
+                <li><a href="#recargos-hemoglobina">Recargos hemoglobina</a></li>
+                <li><a href="#recargos-colesterol">Recargos colesterol</a></li>
             </ul>
          </li>
          </li>
       </ul>
     </li>
+    <li><a href="#cálculo-final-de-los-recargos">Cálculo final de los recargos</a></li>
     <li><a href="#traducción">Traducción</a></li>
     <li><a href="#licencia">Licencia</a></li>
     <li><a href="#referencias">Referencias</a></li>
@@ -374,9 +378,6 @@ Miligramos por decilitro.
 
 ## Cálculo inicial de los recargos
 
-### Edad 
-La edad real se utiliza en todos los cálculos.
-
 ### Tipo de diabetes y edad del individuo
 
 Según la edad del individuo y el tipo de diabetes se establecen los siguientes cálculos:
@@ -457,7 +458,6 @@ Se entiende que no suma (o que suma 0) para todas las tarifas.
 
 ![diabetes_edad_vida][diabetes_edad_vida]
 
-
 ### Diabetes y antigüedad
 
 Según la antigüedad de la diabeted y el tipo de diabetes se establecen los siguientes cálculos:
@@ -490,17 +490,295 @@ El siguiente cuadro es para la tarificación de ILT dependiendo de la fecha de d
 
 ### Recargos imc
 
-### Recargos tensión arterial
+Según el índice de masa corporal, se aplicarán los siguientes cálculos:
 
-### Recargos alcohol
+- Vida, invalidez y accidentes: No aplica la edad del candidato.
+
+[diabetes_imc.csv](docs/diabetes_imc.csv).
+
+
+
+```bash
+// Vida, invalidez y accidentes 
+
+ if (imc < 28) {
+        result += 0;
+    }
+    if (imc >= 28 && imc <= 30) {
+        result += 25;
+    }
+    if (imc > 30 && imc <= 32) {
+        result += 50;
+    }
+    if (imc > 32 && imc <= 34) {
+        result += 75;
+    }
+    if (imc > 34) {
+        result += 999;
+    }
+
+```
+
+
+- ILT: según la edad actual del individuo.
+
+[diabetes_imc_ilt.csv](diabetes_imc_ilt.csv).
+
+
+```bash
+// ILT
+
+if (age <= 34) {
+        if (imc <= 16) {
+            result += 999;
+        }
+        if (imc > 16 && imc <= 18) {
+            result += 50;
+        }
+        if (imc > 18 && imc <= 28) {
+            result += 0;
+        }
+        if (imc > 28 && imc <= 30) {
+            result += 25;
+        }
+        if (imc > 30 && imc <= 32) {
+            result += 50;
+        }
+        if (imc > 32 && imc <= 34) {
+            result += 75;
+        }
+        if (imc > 34 && imc <= 37) {
+            result += 100;
+        }
+        if (imc > 37 && imc <= 40) {
+            result += 125;
+        }
+        if (imc > 40 && imc <= 43) {
+            result += 150;
+        }
+        if (imc > 43) {
+            result += 999;
+        }
+    }
+    if (age > 34 && age <= 55) {
+        if (imc <= 16) {
+            result += 999;
+        }
+        if (imc > 16 && imc <= 18) {
+            result += 25;
+        }
+        if (imc > 18 && imc <= 28) {
+            result += 0;
+        }
+        if (imc > 28 && imc <= 30) {
+            result += 25;
+        }
+        if (imc > 30 && imc <= 34) {
+            result += 50;
+        }
+        if (imc > 34 && imc <= 37) {
+            result += 75;
+        }
+        if (imc > 37 && imc <= 40) {
+            result += 100;
+        }
+        if (imc > 40 && imc <= 43) {
+            result += 125;
+        }
+        if (imc > 43) {
+            result += 999;
+        }
+    }
+    if (age > 55) {
+        if (imc <= 16) {
+            result += 999;
+        }
+        if (imc > 16 && imc <= 18) {
+            result += 25;
+        }
+        if (imc > 18 && imc <= 30) {
+            result += 0;
+        }
+        if (imc > 30 && imc <= 32) {
+            result += 25;
+        }
+        if (imc > 32 && imc <= 37) {
+            result += 50;
+        }
+        if (imc > 37 && imc <= 40) {
+            result += 75;
+        }
+        if (imc > 40 && imc <= 43) {
+            result += 100;
+        }
+        if (imc > 43) {
+            result += 999;
+        }
+    }
+
+```
+
+
 
 ### Recargos tabaco
 
-### Recargos hemoglobina
+- Unidades de tabaco:
+
+```bash
+ +cigarretes + (+cigars * 3) + (+pipes * 2);
+
+```
+
+- Para calcular los recargos por el consumo el tabaco existen una única tabla, valida para todas las garantías:
+
+[diabetes_tabaco.csv](docs/diabetes_tabaco.csv).
+
+![diabetes_tabaco][diabetes_tabaco]
+
+
+```bash
+let units = +cigarretes + (+cigars * 3) + (+pipes * 2);
+    let result = 0;
+    if (units <= 0) {
+        result += 0;
+    }
+    if (units > 0 && units <= 10) {
+        result += 25;
+    }
+    if (units > 10 && units <= 15) {
+        result += 50;
+    }
+    if (units > 15 && units <= 20) {
+        result += 75;
+    }
+    if (units > 20) {
+        result += 999;
+    }
+
+```
+
+### Recargos alcohol
+
+- Unidades de alcohol:
+
+```bash
+units = +wines + (+beers) + (+spirits * 2);
+```
+- Para calcular los recargos por ingesta de alcohol existen una única tabla, valida para todas las garantías:
+
+[diabetes_alcohol.csv](docs/diabetes_alcohol.csv).
+
+```bash
+ let units = +wines + (+beers) + (+spirits * 2);
+    let result = 0;
+    if (units <= 1) {
+        result += 0;
+    }
+    if (units > 1 && units <= 3) {
+        result += 25;
+    }
+    if (units > 3) {
+        result += 999;
+    }
+```
+
+
+### Recargos tensión arterial
+
+- La tabla son unos valores de rangos muy simples, única para todas las garantías.
+
+
+[diabetes_tension.csv](docs/diabetes_tension.csv).
+
+
+```bash
+ if ((systolic > 145) || (diastolic > 95)) {
+        return result += 999;
+    }
+    if ((systolic > 139) || (diastolic > 89)) {
+        return result += 75;
+    }
+    if ((systolic > 131) || (diastolic > 80)) {
+        return result += 50;
+    }
+```
+
 
 ### Recargos insulina
 
+- La tabla para los recargos por insulina, única para todas las garantías.
+
+- Hasta 25 unidades/día: Sin recargo 0%
+- Más de 25 unidades/día: +25%
+
+[diabetes_insulin.csv](docs/diabetes_insulin.csv).
+
+
+### Recargos hemoglobina
+
+- La tabla para los recargos por hemoglobina, única para todas las garantías.
+
+- Hemoglobina glicosilada (mmol/l).
+
+- HbA1c es la abreviatura para hemoglobina glicosilada.
+
+![diabetes_hemoglobin][diabetes_hemoglobin]
+
+[diabetes_hemoglobin.csv](docs/diabetes_hemoglobin.csv).
+
+```bash
+ let result = 0; // menos de 7,0
+
+    if (hemoglobin === 'hem6') { // +10
+        result += 999;
+    }
+    if (hemoglobin === 'hem5') { // de 9,1 a 10
+        result += 100;
+    }
+    if (hemoglobin === 'hem4') { // de 8,1 a 9,0
+        result += 75;
+    }
+    if (hemoglobin === 'hem3') { // de 7,6 a 8,0
+        result += 50;
+    }
+    if (hemoglobin === 'hem2') { // de 7,0 a 7,5
+        result += 25;
+    }
+```
+
+
+
 ### Recargos colesterol
+
+- La tabla para los recargos por colesterol, única para todas las garantías.
+
+[diabetes_cholesterol.csv](docs/diabetes_cholesterol.csv).
+
+```bash
+  let result = 0; // cho1 - Hasta 200
+
+    if (cholesterol === 'cho5') { // +Más de 300
+        result += 999;
+    }
+    if (cholesterol === 'cho4') { // de 276 a 300
+        result += 75;
+    }
+    if (cholesterol === 'cho3') { // de 251 a 275
+        result += 50;
+    }
+    if (cholesterol === 'cho2') { // de 200 a  250
+        result += 25;
+    }
+
+```
+
+## Cálculo final de los recargos
+
+El resultado de la calculadora:
+
+![diabetesNr_result][diabetesNr_result]
+
+
 
 
 <!-- MISCELANEA -->
@@ -512,7 +790,7 @@ La calculadora de esperanza de vida no se ha traducido, ya que las tablas no cor
 Sobre un único código, la aplicación recoge una variable (key) desde la URL que transmite el lenguaje (ES o EN) que se aplicará a las distintas variables del documento HTML.
 Es decir, existe un diccionario al que la aplicación consulta la traducción de una determinada variable.
 
-- [Diccionario VidaNr](docs/vidaNR_dictionary.csv).
+
 - [Diccionario Diabetes](docs/diabetes_dictionary.csv).
 
 En catellano:
@@ -579,6 +857,7 @@ Project Link: [https://github.com/juantxocruz/webpack-diabetesNr](https://github
 [diabetes_edad_vida]: img/diabetes_edad_vida.png
 [diabetes_tiempo_vida]: img/diabetes_tiempo_vida.png
 [diabetes_tiempo_ILT]: img/diabetes_tiempo_ILT.png
-
-
+[diabetes_tabaco]: img/diabetes_tabaco.png
+[diabetes_hemoglobin]: img/diabetes_hemoglobin.png
+[diabetesNr_result]: img/diabetesNr-result.png
 
