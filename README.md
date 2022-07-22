@@ -859,5 +859,5 @@ Project Link: [https://github.com/juantxocruz/webpack-diabetesNr](https://github
 [diabetes_tiempo_ILT]: img/diabetes_tiempo_ILT.png
 [diabetes_tabaco]: img/diabetes_tabaco.png
 [diabetes_hemoglobin]: img/diabetes_hemoglobin.png
-[diabetesNr_result]: img/diabetesNr-result.png
+[diabetesNr_result]: img/diabetesNr_result.png
 
