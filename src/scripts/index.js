@@ -46,7 +46,7 @@ function getLang() {
     const urlParams = new URLSearchParams(queryString);
     const lang = urlParams.get('lang');
 
-    return lang ? lang.toUpperCase() : 'ES';
+    return lang && lang.toUpperCase() === "FR" ? "FR" : lang && lang.toUpperCase() === "EN" ? "EN" : "ES";
 }
 
 
@@ -535,8 +535,12 @@ function setNumericLang(lang) {
     }
 }
 
+// Not in use
 function InvalidMsg(textbox) {
     if (textbox.value == '') {
+        if (idiom === "ES") { }
+        if (idiom === "EN") { }
+        if (idiom === "FR") { }
         textbox.setCustomValidity('Lütfen işaretli yerleri doldurunuz');
     }
     else if (textbox.validity.typeMismatch) {
@@ -676,9 +680,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!e.target.validity.valid) {
                 if (idiom === "EN") {
                     e.target.setCustomValidity("This field is out of the allowed range");
-                } else {
+                }
+                if (idiom === "ES") {
                     e.target.setCustomValidity("Este campo esta fuera del rango permitido");
                 }
+                if (idiom === "FR") {
+                    e.target.setCustomValidity("Ce champ est en dehors de la plage autorisée");
+                }
+
 
             }
         };

@@ -167,7 +167,9 @@ Si el individuo ha pacecido alguna de estas patologías, se descarta cualquier t
 Si el usuario pone que sí, aparece el mensaje "Cualquiera de estas patologías no permiten asegurar ningún riesgo".
 ### Género
 Dos inputs excluyentes del tipo Radio: Hombre y mujer.
+
 Esta varible será luego importante para calcular distintas patologías.
+
 Es un campo obligatorio.
 
 ### Edad
@@ -365,6 +367,7 @@ Inputs excluyentes del tipo Radio con las distintas franjas.
 - de 8,1 a 9,0: +75
 - de 9,1 a 10: +100
 - Más de 10: rechazar (+999)
+
 ### Colesterol
 Inputs excluyentes del tipo Radio con las distintas franjas.
 Miligramos por decilitro.
@@ -807,6 +810,14 @@ http://localhost:8080/?lang=EN
 
 http://davinci.nacionalre.es/nacionalRe-diabetes/build/?lang=en
 ```
+
+En francés:
+```bash
+http://localhost:8080/?lang=FR
+
+http://davinci.nacionalre.es/nacionalRe-diabetes/build/?lang=fr
+```
+
 
 
 <p align="right">(<a href="#top">Subir</a>)</p>
