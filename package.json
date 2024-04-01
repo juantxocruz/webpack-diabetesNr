@@ -1,6 +1,6 @@
 {
-  "name": "webpackdiabetesNr",
-  "version": "1.0.0",
+  "name": "@juantxocruz/webpack-diabetesNr",
+  "version": "2.0.0",
   "description": "Diabetes calculator frontend project based on webpack 5.",
   "scripts": {
     "lint": "npm run lint:styles; npm run lint:scripts",
