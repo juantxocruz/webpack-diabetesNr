@@ -83,6 +83,7 @@ label_hem5,"De 9,1 a 10",From 9.1 to 10,"De 9,1 à 10"
 label_hem6,Más de 10,More than 10,Plus de 10
 male,Hombre,Male,Hommes
 man,Hombre,Man,Homme
+birth_date, Fecha nacimiento,Birth date,Date de naissance
 mandatory_text_1,Fecha nacimiento,Birth date,Date de naissance
 mandatory_text_10,Campo obligatorio,Mandatory field,Champ obligatoire
 mandatory_text_11,Campo obligatorio,Mandatory field,Champ obligatoire
