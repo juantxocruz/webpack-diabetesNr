@@ -46,7 +46,7 @@ h_disability,Invalidez,Disability,Invalidité
 h_results,Resultados de los seguros para diabéticos,Diabetic insurance results,Résultats de l'assurance diabète
 h_temporary_incapacity,Incapacidad laboral temporal,Temporary incapacity for work,Incapacité temporaire de travail
 height,altura,height,hauteur
-height_cm,Altura (cm),Height (cm),hauteur (cm)
+height_cm,Altura (cm),Height (cm),Hauteur (cm)
 heightModalSetup_1_content,La altura introducida es muy baja. Debe introducir una altura mayor de,The entered height is too low. You must enter a height greater than,La hauteur introduite est trop basse. Vous devez entrer une hauteur supérieure à
 heightModalSetup_2_content,centímetros,centimeters,centimètres
 hem1,"Menos de 7,0",Less than 7.0,"Moins de 7,0"
@@ -56,7 +56,7 @@ hem4,"De 8,1 a 9,0",From 8.1 to 9.0,De 8.1 à 9.0
 hem5,"De 9,1 a 10",From 9.1 to 10,De 9.1 à 10
 hem6,Más de 10,More than 10,Plus de 10
 hemoglobin,hemoglobina,hemoglobin,hémoglobine
-imc,índice de masa corporal,body mass index,indice de masse corporelle
+imc,índice de masa corporal,body mass index,Indice de masse corporelle
 ins1,Hasta 25 unidades diarias de insulina,Up to 25 units of insulin daily,Jusqu'à 25 unités d'insuline par jour
 ins1_less_25,Hasta 25 ,Up to 25 ,Jusqu'à 25 
 ins1_units,unidades diarias de insulina,units of insulin daily,unités quotidiennes d'insuline
@@ -81,7 +81,7 @@ label_hem3,"De 7,6 a 8,0",From 7.6 to 8.0,"De 7,6 à 8,0"
 label_hem4,"De 8,1 a 9,0",From 8.1 to 9.0,"De 8,1 à 9,0"
 label_hem5,"De 9,1 a 10",From 9.1 to 10,"De 9,1 à 10"
 label_hem6,Más de 10,More than 10,Plus de 10
-male,Hombre,Male,Hommes
+male,Hombre,Male,Homme
 man,Hombre,Man,Homme
 birth_date, Fecha nacimiento,Birth date,Date de naissance
 mandatory_text_1,Fecha nacimiento,Birth date,Date de naissance
@@ -102,7 +102,7 @@ mandatory_text_6,Campo obligatorio,Mandatory field,Champ obligatoire
 mandatory_text_7,Campo obligatorio,Mandatory field,Champ obligatoire
 mandatory_text_8,Campo obligatorio,Mandatory field,Champ obligatoire
 mandatory_text_9,Campo obligatorio,Mandatory field,Champ obligatoire
-mass_index,índice de masa,Mass index,indice de masse
+mass_index,índice de masa,Mass index,Indice de masse
 modalSetup_footer,""" © NacionalRe. Todos los derechos reservados.""",""" © NacionalRe. All rights reserved.""",""" © NacionalRe. Tous droits réservés."""
 modalSetup_header,Atención,Attention,Attention
 neuropathy,Neuropatía,Neuropathy,Neuropathie
