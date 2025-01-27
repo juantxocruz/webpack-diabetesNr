@@ -1,10 +1,13 @@
+@use "variables" as v; // Ensure this comes first
+
 .diabetes-calc {
+
   button,
   input[type="submit"],
   input[type="reset"],
   input[type="button"] {
     cursor: pointer;
-    background-color: $gray_blue;
+    background-color: v.$gray_blue;
     color: #ffffff;
     padding: 6px 18px !important;
     font-weight: 700;
@@ -19,20 +22,24 @@
     width: 64px;
     height: 32px;
   }
+
   button:hover,
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover {
-    background-color: $primary;
+    background-color: v.$primary;
   }
 
   ul.vertical {
     width: 100%;
     background-color: transparent;
     color: inherit;
-    display: block; /* Make the links appear below each other */
-    padding: 0px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
+    display: block;
+    /* Make the links appear below each other */
+    padding: 0px;
+    /* Add some padding */
+    text-decoration: none;
+    /* Remove underline from links */
     list-style-type: none;
   }
 
@@ -40,17 +47,20 @@
     margin: 4px 0;
     cursor: default;
   }
+
   ul.vertical li input:hover {
     cursor: pointer;
   }
 
   ul.vertical li:hover {
-    background-color: #f1f1f1; /* Dark grey background on mouse-over */
+    background-color: #f1f1f1;
+    /* Dark grey background on mouse-over */
   }
 
   table.regular {
     border-collapse: collapse;
     width: 100%;
+
     td,
     th {
       border: none;
@@ -58,6 +68,7 @@
       padding: 4px;
     }
   }
+
   .hidden {
     display: none;
   }
@@ -67,9 +78,10 @@
   }
 
   input[type="submit"].fieldsOn {
-    background-color: $green;
+    background-color: v.$green;
   }
+
   input[type="submit"].fieldsOn:hover {
-    background-color: $primary;
+    background-color: v.$primary;
   }
 }

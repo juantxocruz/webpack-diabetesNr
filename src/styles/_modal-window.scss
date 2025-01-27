@@ -1,26 +1,39 @@
+@use "variables" as v; // Ensure this comes first
+
 .diabetes-calc {
   /* The Modal (background) */
 
   .modal-window {
-    display: none; /* Hidden, none by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden, none by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
   }
 
   /* Modal Content */
   .modal-content {
     background-color: #fefefe;
-    margin: 4% auto; /* 15% from the top and centered */
+    margin: 4% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+
+    /* Could be more or less, depending on screen size */
     p {
       line-height: 1.6;
     }
@@ -46,7 +59,7 @@
   /* Modal Header */
   .modal-header {
     padding: 16px;
-    background-color: $primary;
+    background-color: v.$primary;
     color: white;
   }
 
@@ -58,7 +71,7 @@
   /* Modal Footer */
   .modal-footer {
     padding: 16px 16px;
-    background-color: $primary;
+    background-color: v.$primary;
     color: white;
   }
 
@@ -73,24 +86,30 @@
     background-repeat: no-repeat;
     background-origin: initial;
     border-radius: 60px;
+
     &.life {
       background-image: url(../img/SVG/life.svg);
     }
+
     &.disability {
       background-image: url(../img/SVG/disability.svg);
     }
+
     &.accident {
       background-image: url(../img/SVG/accident.svg);
     }
+
     &.ilt {
       background-image: url(../img/SVG/ilt.svg);
     }
   }
+
   .result-table {
     font-size: 12px;
     border-collapse: collapse;
     width: 100%;
   }
+
   td,
   th {
     border: none;
@@ -98,25 +117,28 @@
     text-align: left;
     padding: 4px 8px;
   }
+
   td:last-child,
   th:last-child {
     text-align: right;
   }
+
   th {
     display: none;
   }
+
   .modal-print {
     margin: 16px 0;
     text-align: right;
+
     button {
       cursor: pointer;
     }
   }
+
   // pad
-  @media only screen and (max-width: 989px) {
-  }
+  @media only screen and (max-width: 989px) {}
 
   //mobile
-  @media only screen and (max-width: 767px) {
-  }
+  @media only screen and (max-width: 767px) {}
 }
