@@ -611,9 +611,6 @@ function initSubmit() {
 
             openModalResults(e, _vars, $result);
 
-            // we are here: THE CALCULATIONS
-
-            let ok;
         } else {
             openModalWindow(e, fieldsOffModalSetup)
             return false;

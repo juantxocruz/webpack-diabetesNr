@@ -36,7 +36,7 @@ function calcDiabetesByYearsILT(type, years) {
         if (years <= 10) {
             result += 25;
         }
-        if (years > 11 && years <= 20) {
+        if (years > 10 && years <= 20) {
             result += 50;
         }
         if (years > 20 && years <= 25) {
