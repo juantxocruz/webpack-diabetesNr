@@ -13,7 +13,7 @@ export let dictionary =
     { "key": "cho1", "ES": "Hasta 200", "EN": "Up to 200", "FR": "Jusqu'à 200" },
     { "key": "cho2", "ES": "De 200 a 250", "EN": "From 200 to 250", "FR": "De 200 á 250" },
     { "key": "cho3", "ES": "De 251 a 275", "EN": "From 251 to 275", "FR": "De 251 á 275" },
-    { "key": "cho4", "ES": "De 251 a 275", "EN": "From 276 to 300", "FR": "De 251 á 275" },
+    { "key": "cho4", "ES": "De 276 a 300", "EN": "From 276 to 300", "FR": "De 251 á 275" },
     { "key": "cho5", "ES": "Más de 300", "EN": "More than 300", "FR": "Plus de 300" },
     { "key": "cholesterol", "ES": "colesterol", "EN": "cholesterol", "FR": "cholestérol" },
     { "key": "cigarettes", "ES": "cigarrillo", "EN": "cigarettes", "FR": "cigarette" },
