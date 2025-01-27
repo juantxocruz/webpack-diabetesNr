@@ -601,7 +601,7 @@ function initSubmit() {
             $result.tobacco = calcTobacco(Number(_cigarettes), Number(_cigars), Number(_pipes));
             $result.alcohol = calcAlcohol(Number(_wines), Number(_beers), Number(_spirits));
             $result.hypertension = calcHypertension(Number(_systolic), Number(_diastolic));
-            $result.insulin = calcInsulin(parseInt(_insulin));
+            $result.insulin = calcInsulin(_insulin);
             $result.hemoglobin = calcHemoglobin(_hemoglobin);
             $result.cholesterol = calcCholesterol(_cholesterol);
 
