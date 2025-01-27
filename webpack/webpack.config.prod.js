@@ -10,8 +10,10 @@ module.exports = merge(common, {
   stats: 'errors-only',
   bail: true,
   output: {
-    filename: './js/[name].js',
-    chunkFilename: './js/[name].chunk.js',
+    path: path.resolve(__dirname, '../build'), // Ensure it's set to `build`
+    publicPath: process.env.ASSET_PATH || '/calculadora-diabetes/build/', // Ensure this matches `build/`
+    filename: 'js/[name].js',
+    chunkFilename: 'js/[name].chunk.js',
     clean: true,
   },
   plugins: [
