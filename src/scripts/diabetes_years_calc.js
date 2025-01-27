@@ -4,10 +4,10 @@ function calcDiabetesByYearsLife(type, years) {
     let result = 0;
 
     if (type === 't1') {
-        if (years < 5) {
+        if (years <= 5) {
             result += 0;
         }
-        if (years >= 5 && years <= 20) {
+        if (years > 5 && years <= 20) {
             result += 50;
         }
 
